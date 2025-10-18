@@ -1,0 +1,57 @@
+/* Color palette */
+    .color-palette {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .swatch {
+      width: 140px;
+      height: 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--alamia-white);
+      text-align: center;
+    }
+
+    .swatch.light-text { color: var(--alamia-black); }
+
+    /* Buttons */
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn-blue   { background: var(--alamia-blue); color: var(--alamia-white); }
+    .btn-green  { background: var(--alamia-green); color: var(--alamia-white); }
+    .btn-orange { background: var(--alamia-orange); color: var(--alamia-black); }
+
+    /* Typography showcase */
+    /* .type-samples h1,
+    .type-samples h2,
+    .type-samples h3,
+    .type-samples p {
+      margin-bottom: 1rem;
+    }
+
+    .type-samples h1 { font-size: 2.5rem; }
+    .type-samples h2 { font-size: 2rem; }
+    .type-samples h3 { font-size: 1.5rem; }
+    .type-samples p  { font-size: 1rem; } */
