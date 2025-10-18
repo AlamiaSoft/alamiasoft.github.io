@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulting - AlamiaSoft</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/alamiasoft-modern.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'alamia-black': '#0A0A0A',
+                        'alamia-white': '#FFFFFF',
+                        'alamia-gray': '#F8FAFC',
+                        'alamia-light-gray': '#F1F5F9',
+                        'alamia-dark-gray': '#1E293B',
+                        'alamia-green': '#10B981',
+                        'alamia-orange': '#F59E0B',
+                        'alamia-blue': '#3B82F6',
+                        'alamia-purple': '#8B5CF6',
+                        'alamia-light': '#EFF6FF',
+                        'alamia-dark': '#0F172A',
+                        'alamia-accent': '#6366F1',
+                        'alamia-surface': '#FEFEFE',
+                    },
+                    fontFamily: {
+                        ubuntu: ['Ubuntu', 'system-ui', 'sans-serif'],
+                        nunito: ['Nunito', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-nunito text-alamia-dark antialiased">
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator" id="scroll-progress"></div>
+    
+    <!-- Navigation -->
+    <nav class="nav-glass fixed w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-18">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../index-1.html">
+                            <img class="brand-logo" src="../assets/images/alamia-logo-dark-transparent.png" alt="AlamiaSoft Logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="../index-1.html#home" class="nav-link text-alamia-dark-gray hover:text-alamia-accent px-4 py-2 text-sm">Home</a>
+                        <div class="relative group">
+                            <a href="../index-1.html#services" class="nav-link text-alamia-accent px-4 py-2 text-sm font-medium">Services</a>
+                        </div>
+                        <a href="../index-1.html#about" class="nav-link text-alamia-dark-gray hover:text-alamia-accent px-4 py-2 text-sm">About</a>
+                        <a href="../index-1.html#contact" class="nav-link text-alamia-dark-gray hover:text-alamia-accent px-4 py-2 text-sm">Contact</a>
+                        <a href="../index-1.html#contact" class="btn-primary text-white px-6 py-2 rounded-full text-sm font-medium">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Service Hero Section -->
+    <section class="service-hero min-h-screen flex items-center justify-center text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="animate-fade-in">
+                <div class="feature-icon w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-8">
+                    <i class="fas fa-handshake text-3xl text-alamia-accent"></i>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-ubuntu font-bold mb-8 leading-tight">
+                    Technology <span class="gradient-text">Consulting</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+                    Strategic technology guidance to accelerate your digital transformation. Expert advice, proven methodologies, and actionable roadmaps for success.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="#services" class="btn-primary text-white px-8 py-4 rounded-full text-lg font-medium">
+                        Our Expertise
+                    </a>
+                    <a href="#approach" class="btn-secondary text-white px-8 py-4 rounded-full text-lg font-medium">
+                        Our Approach
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consulting Services -->
+    <section id="services" class="py-20 bg-gradient-to-b from-alamia-gray to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-ubuntu font-bold text-alamia-dark mb-6">
+                    Consulting Services
+                </h2>
+                <p class="text-xl text-alamia-dark-gray max-w-3xl mx-auto">
+                    Comprehensive technology consulting to guide your business through digital transformation challenges.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-3xl">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-route text-2xl text-alamia-accent"></i>
+                    </div>
+                    <h3 class="text-2xl font-ubuntu font-semibold mb-4 text-alamia-dark">Digital Strategy</h3>
+                    <p class="text-alamia-dark-gray mb-6">Develop comprehensive digital transformation roadmaps aligned with your business objectives and market opportunities.</p>
+                    <ul class="space-y-2 text-sm text-alamia-dark-gray">
+                        <li class="flex items-center"><i class="fas fa-check text-alamia-green mr-2"></i> Technology Assessment</li>
+                        <li class="flex items-center"><i class="fas fa-check text-alamia-green mr-2"></i> Digital Roadmapping</li>
+                        <li class="flex items-center"><i class="fas fa-check text-alamia-green mr-2"></i> ROI Analysis</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card p-8 rounded-3xl">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-sitemap text-2xl text-alamia-accent"></i>
+                    </div>
+                    <h3 class="text-2xl font-ubuntu font-semibold mb-4 text-alamia-dark">Architecture Design</h3>
+                    <p class="text-alamia-dark-gray mb-6">Design scalable, secure, and maintainable system architectures that support your long-term business goals.</p>
+                    <ul class="space-y-2 text-sm text-alamia-dark-gray">
+                        <li class="flex items-center"><i class="fas fa-check text-alamia-green mr-2"></i> System Architecture</li>
+                        <li class="flex items-center"><i class="fas fa-check text-alamia-green mr-2"></i> Microservices Design</li>
+                        <li class="flex items-center"><i class="fas fa-check text-alamia-green mr-2"></i> Security Architecture</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card p-8 rounded-3xl">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-users-cog text-2xl text-alamia-accent"></i>
+                    </div>
+                    <h3 class="text-2xl font-ubuntu font-semibold mb-4 text-alamia-dark">Process Optimization</h3>
+                    <p class="text-alamia-dark-gray mb-6">Streamline your business processes with technology solutions that improve efficiency and reduce operational costs.</p>
+                    <ul class="space-y-2 text-sm text-alamia-dark-gray">
+                        <li class="flex items-center"><i class="fas fa-check text-alamia-green mr-2"></i> Process Analysis</li>
+                        <li class="flex items-center"><i class="fas fa-check text-alamia-green mr-2"></i> Automation Strategy</li>
+                        <li class="flex items-center"><i class="fas fa-check text-alamia-green mr-2"></i> Workflow Design</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card p-8 rounded-3xl">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-2xl text-alamia-accent"></i>
+                    </div>
+                    <h3 class="text-2xl font-ubuntu font-semibold mb-4 text-alamia-dark">Security Consulting</h3>
+                    <p class="text-alamia-dark-gray mb-6">Comprehensive security assessments and strategies to protect your digital assets and ensure compliance.</p>
+                    <ul class="space-y-2 text-sm text-alamia-dark-gray">
+                        <li class="flex items-center"><i class="fas fa-check text-alamia-green mr-2"></i> Security Audits</li>
+                        <li class="flex items-center"><i class="fas fa-check text-alamia-green mr-2"></i> Compliance Framework</li>
+                        <li class="flex items-center"><i class="fas fa-check text-alamia-green mr-2"></i> Risk Assessment</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card p-8 rounded-3xl">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-graduation-cap text-2xl text-alamia-accent"></i>
+                    </div>
+                    <h3 class="text-2xl font-ubuntu font-semibold mb-4 text-alamia-dark">Team Training</h3>
+                    <p class="text-alamia-dark-gray mb-6">Upskill your team with modern technologies and best practices through customized training programs.</p>
+                    <ul class="space-y-2 text-sm text-alamia-dark-gray">
+                        <li class="flex items-center"><i class="fas fa-check text-alamia-green mr-2"></i> Technical Training</li>
+                        <li class="flex items-center"><i class="fas fa-check text-alamia-green mr-2"></i> Best Practices</li>
+                        <li class="flex items-center"><i class="fas fa-check text-alamia-green mr-2"></i> Mentoring Programs</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card p-8 rounded-3xl">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-2xl text-alamia-accent"></i>
+                    </div>
+                    <h3 class="text-2xl font-ubuntu font-semibold mb-4 text-alamia-dark">Performance Optimization</h3>
+                    <p class="text-alamia-dark-gray mb-6">Optimize your existing systems for better performance, scalability, and cost-effectiveness.</p>
+                    <ul class="space-y-2 text-sm text-alamia-dark-gray">
+                        <li class="flex items-center"><i class="fas fa-check text-alamia-green mr-2"></i> Performance Analysis</li>
+                        <li class="flex items-center"><i class="fas fa-check text-alamia-green mr-2"></i> Bottleneck Identification</li>
+                        <li class="flex items-center"><i class="fas fa-check text-alamia-green mr-2"></i> Optimization Strategy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Approach -->
+    <section id="approach" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-ubuntu font-bold text-alamia-dark mb-6">
+                    Our Consulting Approach
+                </h2>
+                <p class="text-xl text-alamia-dark-gray max-w-3xl mx-auto">
+                    A proven methodology that combines deep technical expertise with business acumen to deliver actionable results.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="process-step p-8 rounded-3xl text-center">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-search text-2xl text-alamia-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-ubuntu font-semibold mb-4">Discovery</h3>
+                    <p class="text-alamia-dark-gray">Deep dive into your current technology landscape, business processes, and strategic objectives.</p>
+                </div>
+                <div class="process-step p-8 rounded-3xl text-center">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-microscope text-2xl text-alamia-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-ubuntu font-semibold mb-4">Analysis</h3>
+                    <p class="text-alamia-dark-gray">Comprehensive analysis of gaps, opportunities, and potential solutions tailored to your needs.</p>
+                </div>
+                <div class="process-step p-8 rounded-3xl text-center">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-map text-2xl text-alamia-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-ubuntu font-semibold mb-4">Strategy</h3>
+                    <p class="text-alamia-dark-gray">Develop detailed roadmaps with clear milestones, timelines, and success metrics.</p>
+                </div>
+                <div class="process-step p-8 rounded-3xl text-center">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-rocket text-2xl text-alamia-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-ubuntu font-semibold mb-4">Implementation</h3>
+                    <p class="text-alamia-dark-gray">Support you through implementation with ongoing guidance and course corrections as needed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries We Serve -->
+    <section class="py-20 bg-gradient-to-b from-alamia-gray to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-ubuntu font-bold text-alamia-dark mb-6">
+                    Industries We Serve
+                </h2>
+                <p class="text-xl text-alamia-dark-gray max-w-3xl mx-auto">
+                    Deep industry expertise across multiple sectors to provide relevant and actionable consulting services.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="glass-card p-6 rounded-3xl text-center">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heartbeat text-2xl text-alamia-accent"></i>
+                    </div>
+                    <h3 class="text-lg font-ubuntu font-semibold mb-2">Healthcare</h3>
+                    <p class="text-alamia-dark-gray text-sm">Digital health solutions, compliance, and patient data management.</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl text-center">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-university text-2xl text-alamia-accent"></i>
+                    </div>
+                    <h3 class="text-lg font-ubuntu font-semibold mb-2">Financial Services</h3>
+                    <p class="text-alamia-dark-gray text-sm">Fintech solutions, regulatory compliance, and digital banking.</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl text-center">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shopping-cart text-2xl text-alamia-accent"></i>
+                    </div>
+                    <h3 class="text-lg font-ubuntu font-semibold mb-2">E-commerce</h3>
+                    <p class="text-alamia-dark-gray text-sm">Digital commerce platforms, customer experience, and analytics.</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl text-center">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-industry text-2xl text-alamia-accent"></i>
+                    </div>
+                    <h3 class="text-lg font-ubuntu font-semibold mb-2">Manufacturing</h3>
+                    <p class="text-alamia-dark-gray text-sm">Industry 4.0, IoT integration, and supply chain optimization.</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl text-center">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-graduation-cap text-2xl text-alamia-accent"></i>
+                    </div>
+                    <h3 class="text-lg font-ubuntu font-semibold mb-2">Education</h3>
+                    <p class="text-alamia-dark-gray text-sm">EdTech solutions, learning management systems, and digital transformation.</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl text-center">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-truck text-2xl text-alamia-accent"></i>
+                    </div>
+                    <h3 class="text-lg font-ubuntu font-semibold mb-2">Logistics</h3>
+                    <p class="text-alamia-dark-gray text-sm">Supply chain digitization, tracking systems, and route optimization.</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl text-center">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-bolt text-2xl text-alamia-accent"></i>
+                    </div>
+                    <h3 class="text-lg font-ubuntu font-semibold mb-2">Energy</h3>
+                    <p class="text-alamia-dark-gray text-sm">Smart grid solutions, renewable energy systems, and efficiency optimization.</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl text-center">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-building text-2xl text-alamia-accent"></i>
+                    </div>
+                    <h3 class="text-lg font-ubuntu font-semibold mb-2">Real Estate</h3>
+                    <p class="text-alamia-dark-gray text-sm">PropTech solutions, property management systems, and digital marketplaces.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="animate-fade-in">
+                    <h2 class="text-4xl md:text-5xl font-ubuntu font-bold text-alamia-dark mb-8">
+                        Why Choose Our Consulting?
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="feature-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-medal text-alamia-accent"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-ubuntu font-semibold mb-2">Proven Expertise</h3>
+                                <p class="text-alamia-dark-gray">15+ years of experience helping businesses navigate complex technology challenges.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="feature-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-handshake text-alamia-accent"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-ubuntu font-semibold mb-2">Collaborative Approach</h3>
+                                <p class="text-alamia-dark-gray">We work closely with your team to ensure knowledge transfer and sustainable results.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="feature-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-chart-line text-alamia-accent"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-ubuntu font-semibold mb-2">Measurable Results</h3>
+                                <p class="text-alamia-dark-gray">Focus on delivering tangible business outcomes with clear ROI metrics.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="stats-card p-6 rounded-2xl text-center">
+                        <div class="text-4xl font-ubuntu font-bold text-alamia-accent mb-2">200+</div>
+                        <div class="text-alamia-dark-gray">Projects Delivered</div>
+                    </div>
+                    <div class="stats-card p-6 rounded-2xl text-center">
+                        <div class="text-4xl font-ubuntu font-bold text-alamia-green mb-2">95%</div>
+                        <div class="text-alamia-dark-gray">Client Satisfaction</div>
+                    </div>
+                    <div class="stats-card p-6 rounded-2xl text-center">
+                        <div class="text-4xl font-ubuntu font-bold text-alamia-blue mb-2">15+</div>
+                        <div class="text-alamia-dark-gray">Years Experience</div>
+                    </div>
+                    <div class="stats-card p-6 rounded-2xl text-center">
+                        <div class="text-4xl font-ubuntu font-bold text-alamia-purple mb-2">50+</div>
+                        <div class="text-alamia-dark-gray">Expert Consultants</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-alamia-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-ubuntu font-bold mb-8">
+                Ready to Transform Your Business?
+            </h2>
+            <p class="text-xl text-slate-300 mb-12 max-w-3xl mx-auto">
+                Let's discuss your technology challenges and create a strategic roadmap for digital transformation success.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="../index-1.html#contact" class="btn-primary text-white px-8 py-4 rounded-full text-lg font-medium">
+                    Schedule Consultation
+                </a>
+                <a href="../index-1.html#contact" class="btn-secondary text-white px-8 py-4 rounded-full text-lg font-medium">
+                    Free Assessment
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-alamia-dark text-white py-16 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-alamia-dark via-alamia-dark to-slate-800 opacity-90"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-6">
+                        <img class="brand-logo" src="../assets/images/alamia-logo-light-transparent.png" alt="AlamiaSoft Logo">
+                    </div>
+                    <p class="text-slate-300 mb-6 leading-relaxed max-w-md">
+                        Innovative software solutions that drive business growth and digital transformation. Your clear path to growth.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-ubuntu font-semibold mb-6">Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="custom-development.html" class="text-slate-300 hover:text-white transition-colors">Custom Development</a></li>
+                        <li><a href="cloud-solutions.html" class="text-slate-300 hover:text-white transition-colors">Cloud Solutions</a></li>
+                        <li><a href="data-analytics.html" class="text-slate-300 hover:text-white transition-colors">Data Analytics</a></li>
+                        <li><a href="consulting.html" class="text-slate-300 hover:text-white transition-colors">Consulting</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-ubuntu font-semibold mb-6">Company</h3>
+                    <ul class="space-y-3">
+                        <li><a href="../index-1.html#about" class="text-slate-300 hover:text-white transition-colors">About</a></li>
+                        <li><a href="../index-1.html#contact" class="text-slate-300 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="../privacy-policy.html" class="text-slate-300 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="../terms-of-service.html" class="text-slate-300 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-700 pt-8 text-center">
+                <p class="text-slate-400">&copy; 2024 AlamiaSoft. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll progress indicator
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            document.getElementById('scroll-progress').style.transform = `scaleX(${scrolled / 100})`;
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.animate-fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Development - AlamiaSoft</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/alamiasoft-modern.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'alamia-black': '#0A0A0A',
+                        'alamia-white': '#FFFFFF',
+                        'alamia-gray': '#F8FAFC',
+                        'alamia-light-gray': '#F1F5F9',
+                        'alamia-dark-gray': '#1E293B',
+                        'alamia-green': '#10B981',
+                        'alamia-orange': '#F59E0B',
+                        'alamia-blue': '#3B82F6',
+                        'alamia-purple': '#8B5CF6',
+                        'alamia-light': '#EFF6FF',
+                        'alamia-dark': '#0F172A',
+                        'alamia-accent': '#6366F1',
+                        'alamia-surface': '#FEFEFE',
+                    },
+                    fontFamily: {
+                        ubuntu: ['Ubuntu', 'system-ui', 'sans-serif'],
+                        nunito: ['Nunito', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-nunito text-alamia-dark antialiased">
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator" id="scroll-progress"></div>
+    
+    <!-- Navigation -->
+    <nav class="nav-glass fixed w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-18">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../index-1.html">
+                            <img class="brand-logo" src="../assets/images/alamia-logo-dark-transparent.png" alt="AlamiaSoft Logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="../index-1.html#home" class="nav-link text-alamia-dark-gray hover:text-alamia-accent px-4 py-2 text-sm">Home</a>
+                        <div class="relative group">
+                            <a href="../index-1.html#services" class="nav-link text-alamia-accent px-4 py-2 text-sm font-medium">Services</a>
+                        </div>
+                        <a href="../index-1.html#about" class="nav-link text-alamia-dark-gray hover:text-alamia-accent px-4 py-2 text-sm">About</a>
+                        <a href="../index-1.html#contact" class="nav-link text-alamia-dark-gray hover:text-alamia-accent px-4 py-2 text-sm">Contact</a>
+                        <a href="../index-1.html#contact" class="btn-primary text-white px-6 py-2 rounded-full text-sm font-medium">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Service Hero Section -->
+    <section class="service-hero min-h-screen flex items-center justify-center text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="animate-fade-in">
+                <div class="feature-icon w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-8">
+                    <i class="fas fa-code text-3xl text-alamia-accent"></i>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-ubuntu font-bold mb-8 leading-tight">
+                    Custom <span class="gradient-text">Development</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+                    Tailored software solutions designed specifically for your business needs. From concept to deployment, we build applications that drive growth and efficiency.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="#process" class="btn-primary text-white px-8 py-4 rounded-full text-lg font-medium">
+                        Our Process
+                    </a>
+                    <a href="#technologies" class="btn-secondary text-white px-8 py-4 rounded-full text-lg font-medium">
+                        Technologies
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Overview -->
+    <section class="py-20 bg-gradient-to-b from-alamia-gray to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="animate-fade-in">
+                    <h2 class="text-4xl md:text-5xl font-ubuntu font-bold text-alamia-dark mb-8">
+                        Why Choose Custom Development?
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="feature-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-bullseye text-alamia-accent"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-ubuntu font-semibold mb-2">Perfect Fit</h3>
+                                <p class="text-alamia-dark-gray">Solutions designed specifically for your unique business requirements and workflows.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="feature-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-expand-arrows-alt text-alamia-accent"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-ubuntu font-semibold mb-2">Scalability</h3>
+                                <p class="text-alamia-dark-gray">Built to grow with your business, handling increased load and new features seamlessly.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="feature-icon w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-shield-alt text-alamia-accent"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-ubuntu font-semibold mb-2">Full Control</h3>
+                                <p class="text-alamia-dark-gray">Complete ownership of your software with no vendor lock-in or licensing restrictions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card p-8 rounded-3xl">
+                    <div class="stats-card p-6 rounded-2xl mb-6">
+                        <div class="text-center">
+                            <div class="text-4xl font-ubuntu font-bold text-alamia-accent mb-2">500+</div>
+                            <div class="text-alamia-dark-gray">Custom Applications Built</div>
+                        </div>
+                    </div>
+                    <div class="stats-card p-6 rounded-2xl mb-6">
+                        <div class="text-center">
+                            <div class="text-4xl font-ubuntu font-bold text-alamia-green mb-2">98%</div>
+                            <div class="text-alamia-dark-gray">Client Satisfaction Rate</div>
+                        </div>
+                    </div>
+                    <div class="stats-card p-6 rounded-2xl">
+                        <div class="text-center">
+                            <div class="text-4xl font-ubuntu font-bold text-alamia-blue mb-2">24/7</div>
+                            <div class="text-alamia-dark-gray">Support & Maintenance</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Process -->
+    <section id="process" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-ubuntu font-bold text-alamia-dark mb-6">
+                    Our Development Process
+                </h2>
+                <p class="text-xl text-alamia-dark-gray max-w-3xl mx-auto">
+                    A proven methodology that ensures your project is delivered on time, within budget, and exceeds expectations.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="process-step p-8 rounded-3xl text-center">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-lightbulb text-2xl text-alamia-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-ubuntu font-semibold mb-4">Discovery</h3>
+                    <p class="text-alamia-dark-gray">Understanding your business needs, goals, and technical requirements through detailed consultation.</p>
+                </div>
+                <div class="process-step p-8 rounded-3xl text-center">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-drafting-compass text-2xl text-alamia-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-ubuntu font-semibold mb-4">Design</h3>
+                    <p class="text-alamia-dark-gray">Creating detailed wireframes, prototypes, and technical architecture for your solution.</p>
+                </div>
+                <div class="process-step p-8 rounded-3xl text-center">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-code text-2xl text-alamia-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-ubuntu font-semibold mb-4">Development</h3>
+                    <p class="text-alamia-dark-gray">Agile development with regular updates, testing, and feedback integration throughout the process.</p>
+                </div>
+                <div class="process-step p-8 rounded-3xl text-center">
+                    <div class="feature-icon w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-rocket text-2xl text-alamia-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-ubuntu font-semibold mb-4">Deployment</h3>
+                    <p class="text-alamia-dark-gray">Seamless launch with comprehensive testing, training, and ongoing support for your team.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies -->
+    <section id="technologies" class="py-20 bg-gradient-to-b from-alamia-gray to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-ubuntu font-bold text-alamia-dark mb-6">
+                    Technologies We Use
+                </h2>
+                <p class="text-xl text-alamia-dark-gray max-w-3xl mx-auto">
+                    We leverage cutting-edge technologies to build robust, scalable, and future-proof applications.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="glass-card p-8 rounded-3xl">
+                    <h3 class="text-2xl font-ubuntu font-semibold mb-6 text-alamia-dark">Frontend</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="tech-tag px-4 py-2 rounded-full text-sm font-medium">React</span>
+                        <span class="tech-tag px-4 py-2 rounded-full text-sm font-medium">Vue.js</span>
+                        <span class="tech-tag px-4 py-2 rounded-full text-sm font-medium">Angular</span>
+                        <span class="tech-tag px-4 py-2 rounded-full text-sm font-medium">TypeScript</span>
+                        <span class="tech-tag px-4 py-2 rounded-full text-sm font-medium">Next.js</span>
+                        <span class="tech-tag px-4 py-2 rounded-full text-sm font-medium">Tailwind CSS</span>
+                    </div>
+                </div>
+                <div class="glass-card p-8 rounded-3xl">
+                    <h3 class="text-2xl font-ubuntu font-semibold mb-6 text-alamia-dark">Backend</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="tech-tag px-4 py-2 rounded-full text-sm font-medium">Node.js</span>
+                        <span class="tech-tag px-4 py-2 rounded-full text-sm font-medium">Python</span>
+                        <span class="tech-tag px-4 py-2 rounded-full text-sm font-medium">Java</span>
+                        <span class="tech-tag px-4 py-2 rounded-full text-sm font-medium">C#</span>
+                        <span class="tech-tag px-4 py-2 rounded-full text-sm font-medium">PHP</span>
+                        <span class="tech-tag px-4 py-2 rounded-full text-sm font-medium">Go</span>
+                    </div>
+                </div>
+                <div class="glass-card p-8 rounded-3xl">
+                    <h3 class="text-2xl font-ubuntu font-semibold mb-6 text-alamia-dark">Database</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="tech-tag px-4 py-2 rounded-full text-sm font-medium">PostgreSQL</span>
+                        <span class="tech-tag px-4 py-2 rounded-full text-sm font-medium">MongoDB</span>
+                        <span class="tech-tag px-4 py-2 rounded-full text-sm font-medium">MySQL</span>
+                        <span class="tech-tag px-4 py-2 rounded-full text-sm font-medium">Redis</span>
+                        <span class="tech-tag px-4 py-2 rounded-full text-sm font-medium">Elasticsearch</span>
+                        <span class="tech-tag px-4 py-2 rounded-full text-sm font-medium">Firebase</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-alamia-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-ubuntu font-bold mb-8">
+                Ready to Build Your Custom Solution?
+            </h2>
+            <p class="text-xl text-slate-300 mb-12 max-w-3xl mx-auto">
+                Let's discuss your project requirements and create a solution that perfectly fits your business needs.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="../index-1.html#contact" class="btn-primary text-white px-8 py-4 rounded-full text-lg font-medium">
+                    Start Your Project
+                </a>
+                <a href="../index-1.html#contact" class="btn-secondary text-white px-8 py-4 rounded-full text-lg font-medium">
+                    Schedule Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-alamia-dark text-white py-16 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-alamia-dark via-alamia-dark to-slate-800 opacity-90"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-6">
+                        <img class="brand-logo" src="../assets/images/alamia-logo-light-transparent.png" alt="AlamiaSoft Logo">
+                    </div>
+                    <p class="text-slate-300 mb-6 leading-relaxed max-w-md">
+                        Innovative software solutions that drive business growth and digital transformation. Your clear path to growth.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-ubuntu font-semibold mb-6">Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="custom-development.html" class="text-slate-300 hover:text-white transition-colors">Custom Development</a></li>
+                        <li><a href="cloud-solutions.html" class="text-slate-300 hover:text-white transition-colors">Cloud Solutions</a></li>
+                        <li><a href="data-analytics.html" class="text-slate-300 hover:text-white transition-colors">Data Analytics</a></li>
+                        <li><a href="consulting.html" class="text-slate-300 hover:text-white transition-colors">Consulting</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-ubuntu font-semibold mb-6">Company</h3>
+                    <ul class="space-y-3">
+                        <li><a href="../index-1.html#about" class="text-slate-300 hover:text-white transition-colors">About</a></li>
+                        <li><a href="../index-1.html#contact" class="text-slate-300 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="../privacy-policy.html" class="text-slate-300 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="../terms-of-service.html" class="text-slate-300 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-700 pt-8 text-center">
+                <p class="text-slate-400">&copy; 2024 AlamiaSoft. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll progress indicator
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            document.getElementById('scroll-progress').style.transform = `scaleX(${scrolled / 100})`;
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.animate-fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
