@@ -148,24 +148,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="pt-32 pb-32 relative overflow-hidden">
-        <!-- Video Background -->
-        <div class="absolute inset-0 z-0">
-            <video 
-                autoplay 
-                muted 
-                loop 
-                playsinline 
-                class="w-full h-full object-cover"
-                poster="assets/images/hero-fallback.jpg">
-                <source src="assets/videos/technology-particles.mp4" type="video/mp4">
-                <!-- Fallback for browsers that don't support video -->
-                <div class="w-full h-full hero-gradient"></div>
-            </video>
-            <!-- Enhanced overlay for better text readability -->
-            <div class="absolute inset-0 bg-gradient-to-br from-alamia-dark/80 via-slate-900/70 to-alamia-dark-gray/80"></div>
-            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/20 via-purple-900/30 to-cyan-900/20"></div>
-        </div>
+    <section id="home" class="pt-32 pb-32 relative overflow-hidden hero-gradient">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center">
                 <div class="animate-fade-in">
@@ -565,11 +548,8 @@
             <div class="border-t border-slate-700/50 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <div class="text-center md:text-left mb-4 md:mb-0">
-                        <p class="text-slate-400 text-sm mb-1">
+                        <p class="text-slate-400 text-sm">
                             &copy; 2025 AlamiaSoft. All rights reserved. Made with <i class="fas fa-heart text-red-500 mx-1"></i> for innovation.
-                        </p>
-                        <p class="text-slate-500 text-xs">
-                            <a href="https://www.vecteezy.com/free-videos/exploding" class="hover:text-slate-300 transition-colors" target="_blank" rel="noopener">Exploding Stock Videos by Vecteezy</a>
                         </p>
                     </div>
                     <div class="flex items-center space-x-6 text-sm text-slate-400">
@@ -588,26 +568,6 @@
     <script>
         // Modern JavaScript with enhanced functionality
         document.addEventListener('DOMContentLoaded', function() {
-            // Video background handling
-            const heroVideo = document.querySelector('#home video');
-            if (heroVideo) {
-                // Handle video load error - fallback to gradient background
-                heroVideo.addEventListener('error', function() {
-                    const videoContainer = this.parentElement;
-                    videoContainer.classList.add('video-fallback');
-                    this.style.display = 'none';
-                });
-                
-                // Ensure video plays on mobile devices
-                heroVideo.addEventListener('loadeddata', function() {
-                    this.play().catch(function(error) {
-                        console.log('Video autoplay failed:', error);
-                        // Fallback to gradient if autoplay fails
-                        const videoContainer = heroVideo.parentElement;
-                        videoContainer.classList.add('video-fallback');
-                    });
-                });
-            }
 
             // Mobile menu toggle with animation
             const mobileMenuButton = document.getElementById('mobile-menu-button');
