@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlamiaSoft - Innovative Software Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/alamiasoft-modern.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'alamia-black': '#0A0A0A',
+                        'alamia-white': '#FFFFFF',
+                        'alamia-gray': '#F8FAFC',
+                        'alamia-light-gray': '#F1F5F9',
+                        'alamia-dark-gray': '#1E293B',
+                        'alamia-green': '#10B981',
+                        'alamia-orange': '#F59E0B',
+                        'alamia-blue': '#3B82F6',
+                        'alamia-purple': '#8B5CF6',
+                        'alamia-light': '#EFF6FF',
+                        'alamia-dark': '#0F172A',
+                        'alamia-accent': '#6366F1',
+                        'alamia-surface': '#FEFEFE',
+                    },
+                    fontFamily: {
+                        ubuntu: ['Ubuntu', 'system-ui', 'sans-serif'],
+                        nunito: ['Nunito', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(99, 102, 241, 0.3)' },
+                            '100%': { boxShadow: '0 0 30px rgba(99, 102, 241, 0.6)' },
+                        },
+                    },
+                    backdropBlur: {
+                        xs: '2px',
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+<body class="font-nunito text-alamia-dark antialiased">
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator" id="scroll-progress"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full nav-glass z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-18">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img class="brand-logo" src="./assets/images/alamia-logo-dark-transparent.png" alt="AlamiaSoft Logo">
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#home" class="nav-link text-alamia-dark-gray hover:text-alamia-accent px-4 py-2 text-sm">Home</a>
+                        <div class="relative group">
+                            <a href="#services" class="nav-link text-alamia-dark-gray hover:text-alamia-accent px-4 py-2 text-sm flex items-center">
+                                Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </a>
+                            <div class="absolute top-full left-0 mt-2 w-64 glass-card rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                                <div class="p-4 space-y-2">
+                                    <a href="services/custom-development.html" class="block px-4 py-3 text-alamia-dark-gray hover:text-alamia-accent hover:bg-alamia-light/50 rounded-lg transition-all">
+                                        <i class="fas fa-code mr-3 text-alamia-accent"></i>Custom Development
+                                    </a>
+                                    <a href="services/cloud-solutions.html" class="block px-4 py-3 text-alamia-dark-gray hover:text-alamia-accent hover:bg-alamia-light/50 rounded-lg transition-all">
+                                        <i class="fas fa-cloud mr-3 text-alamia-accent"></i>Cloud Solutions
+                                    </a>
+                                    <a href="services/data-analytics.html" class="block px-4 py-3 text-alamia-dark-gray hover:text-alamia-accent hover:bg-alamia-light/50 rounded-lg transition-all">
+                                        <i class="fas fa-chart-bar mr-3 text-alamia-accent"></i>Data Analytics
+                                    </a>
+                                    <a href="services/consulting.html" class="block px-4 py-3 text-alamia-dark-gray hover:text-alamia-accent hover:bg-alamia-light/50 rounded-lg transition-all">
+                                        <i class="fas fa-handshake mr-3 text-alamia-accent"></i>Consulting
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#about" class="nav-link text-alamia-dark-gray hover:text-alamia-accent px-4 py-2 text-sm">About</a>
+                        <a href="#contact" class="nav-link text-alamia-dark-gray hover:text-alamia-accent px-4 py-2 text-sm">Contact</a>
+                        <button class="btn-primary text-white px-6 py-2.5 rounded-full text-sm font-medium">
+                            <i class="fas fa-rocket mr-2"></i>Get Started
+                        </button>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-alamia-dark-gray hover:text-alamia-accent p-2 rounded-lg transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden nav-glass border-t border-white/20">
+            <div class="px-4 pt-4 pb-6 space-y-3">
+                <a href="#home" class="block px-4 py-3 text-alamia-dark-gray hover:text-alamia-accent hover:bg-white/10 rounded-lg transition-all">Home</a>
+                <div class="space-y-2">
+                    <a href="#services" class="block px-4 py-3 text-alamia-dark-gray hover:text-alamia-accent hover:bg-white/10 rounded-lg transition-all">Services</a>
+                    <div class="ml-4 space-y-1">
+                        <a href="services/custom-development.html" class="block px-4 py-2 text-sm text-alamia-dark-gray hover:text-alamia-accent hover:bg-white/10 rounded-lg transition-all">
+                            <i class="fas fa-code mr-2 text-alamia-accent"></i>Custom Development
+                        </a>
+                        <a href="services/cloud-solutions.html" class="block px-4 py-2 text-sm text-alamia-dark-gray hover:text-alamia-accent hover:bg-white/10 rounded-lg transition-all">
+                            <i class="fas fa-cloud mr-2 text-alamia-accent"></i>Cloud Solutions
+                        </a>
+                        <a href="services/data-analytics.html" class="block px-4 py-2 text-sm text-alamia-dark-gray hover:text-alamia-accent hover:bg-white/10 rounded-lg transition-all">
+                            <i class="fas fa-chart-bar mr-2 text-alamia-accent"></i>Data Analytics
+                        </a>
+                        <a href="services/consulting.html" class="block px-4 py-2 text-sm text-alamia-dark-gray hover:text-alamia-accent hover:bg-white/10 rounded-lg transition-all">
+                            <i class="fas fa-handshake mr-2 text-alamia-accent"></i>Consulting
+                        </a>
+                    </div>
+                </div>
+                <a href="#about" class="block px-4 py-3 text-alamia-dark-gray hover:text-alamia-accent hover:bg-white/10 rounded-lg transition-all">About</a>
+                <a href="#contact" class="block px-4 py-3 text-alamia-dark-gray hover:text-alamia-accent hover:bg-white/10 rounded-lg transition-all">Contact</a>
+                <button class="w-full btn-primary text-white px-6 py-3 rounded-full text-sm font-medium mt-4">
+                    <i class="fas fa-rocket mr-2"></i>Get Started
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-32 relative overflow-hidden">
+        <!-- Video Background -->
+        <div class="absolute inset-0 z-0">
+            <video 
+                autoplay 
+                muted 
+                loop 
+                playsinline 
+                class="w-full h-full object-cover"
+                poster="assets/images/hero-fallback.jpg">
+                <source src="assets/videos/technology-particles.mp4" type="video/mp4">
+                <!-- Fallback for browsers that don't support video -->
+                <div class="w-full h-full hero-gradient"></div>
+            </video>
+            <!-- Enhanced overlay for better text readability -->
+            <div class="absolute inset-0 bg-gradient-to-br from-alamia-dark/80 via-slate-900/70 to-alamia-dark-gray/80"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/20 via-purple-900/30 to-cyan-900/20"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center">
+                <div class="animate-fade-in">
+                    <h1 class="text-5xl md:text-7xl font-ubuntu font-bold text-white mb-8 leading-tight">
+                        Innovative
+                        <span class="block gradient-text bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                            Software Solutions
+                        </span>
+                    </h1>
+                </div>
+                <div class="animate-slide-up" style="animation-delay: 0.2s;">
+                    <p class="text-xl md:text-2xl text-slate-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+                        Empowering businesses with cutting-edge technology solutions that drive 
+                        <span class="text-blue-300 font-semibold">growth</span>, 
+                        <span class="text-purple-300 font-semibold">efficiency</span>, and 
+                        <span class="text-cyan-300 font-semibold">digital transformation</span>.
+                    </p>
+                </div>
+                <div class="animate-slide-up flex flex-col sm:flex-row gap-6 justify-center items-center" style="animation-delay: 0.4s;">
+                    <button class="btn-primary text-white px-10 py-4 rounded-full font-semibold text-lg group">
+                        <i class="fas fa-play mr-3 group-hover:mr-4 transition-all"></i>
+                        Explore Solutions
+                    </button>
+                    <button class="btn-secondary text-white px-10 py-4 rounded-full font-semibold text-lg group">
+                        <i class="fas fa-calendar-alt mr-3 group-hover:mr-4 transition-all"></i>
+                        Schedule Demo
+                    </button>
+                </div>
+                <div class="mt-16 animate-slide-up" style="animation-delay: 0.6s;">
+                    <div class="flex justify-center items-center space-x-8 text-slate-400">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-check-circle text-green-400"></i>
+                            <span class="text-sm">Trusted by 50+ companies</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <span class="text-sm">4.9/5 client satisfaction</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-shield-alt text-blue-400"></i>
+                            <span class="text-sm">Enterprise security</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-20 floating-element"></div>
+        <div class="absolute top-40 right-20 w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-20 floating-element" style="animation-delay: -2s;"></div>
+        <div class="absolute bottom-20 left-20 w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full opacity-20 floating-element" style="animation-delay: -4s;"></div>
+        <div class="absolute bottom-40 right-10 w-24 h-24 bg-gradient-to-r from-green-500 to-cyan-500 rounded-full opacity-20 floating-element" style="animation-delay: -1s;"></div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-ubuntu font-bold text-alamia-dark mb-6">
+                    Our <span class="gradient-text">Services</span>
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                    Comprehensive software solutions tailored to meet your business needs and accelerate digital transformation with cutting-edge technology.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+                <!-- Custom Development -->
+                <div class="glass-card p-8 rounded-2xl group">
+                    <div class="feature-icon w-16 h-16 mb-8 flex items-center justify-center rounded-2xl">
+                        <i class="fas fa-code text-2xl text-alamia-accent transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-ubuntu font-semibold mb-6 text-alamia-dark">Custom Development</h3>
+                    <p class="text-slate-600 mb-8 leading-relaxed">
+                        Bespoke software solutions designed and developed to meet your specific business requirements and workflows with modern technologies.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <a href="#" class="text-alamia-accent font-semibold hover:text-alamia-purple transition-colors group-hover:translate-x-2 transform duration-300">
+                            Learn More
+                        </a>
+                        <i class="fas fa-arrow-right text-alamia-accent group-hover:translate-x-2 transform transition-transform duration-300"></i>
+                    </div>
+                    <div class="mt-6 flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">React</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">Node.js</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Python</span>
+                    </div>
+                </div>
+
+                <!-- Cloud Solutions -->
+                <div class="glass-card p-8 rounded-2xl group">
+                    <div class="feature-icon w-16 h-16 mb-8 flex items-center justify-center rounded-2xl">
+                        <i class="fas fa-cloud text-2xl text-alamia-accent transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-ubuntu font-semibold mb-6 text-alamia-dark">Cloud Solutions</h3>
+                    <p class="text-slate-600 mb-8 leading-relaxed">
+                        Scalable cloud infrastructure and services that ensure reliability, security, and optimal performance for your applications.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <a href="#" class="text-alamia-accent font-semibold hover:text-alamia-purple transition-colors group-hover:translate-x-2 transform duration-300">
+                            Learn More
+                        </a>
+                        <i class="fas fa-arrow-right text-alamia-accent group-hover:translate-x-2 transform transition-transform duration-300"></i>
+                    </div>
+                    <div class="mt-6 flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-medium">AWS</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">Azure</span>
+                        <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-medium">Docker</span>
+                    </div>
+                </div>
+
+                <!-- Data Analytics -->
+                <div class="glass-card p-8 rounded-2xl group">
+                    <div class="feature-icon w-16 h-16 mb-8 flex items-center justify-center rounded-2xl">
+                        <i class="fas fa-chart-line text-2xl text-alamia-accent transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-ubuntu font-semibold mb-6 text-alamia-dark">Data Analytics</h3>
+                    <p class="text-slate-600 mb-8 leading-relaxed">
+                        Advanced analytics and business intelligence solutions to transform your data into actionable insights and strategic decisions.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <a href="#" class="text-alamia-accent font-semibold hover:text-alamia-purple transition-colors group-hover:translate-x-2 transform duration-300">
+                            Learn More
+                        </a>
+                        <i class="fas fa-arrow-right text-alamia-accent group-hover:translate-x-2 transform transition-transform duration-300"></i>
+                    </div>
+                    <div class="mt-6 flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-medium">Tableau</span>
+                        <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-medium">Power BI</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">ML</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-gradient-to-br from-slate-50 to-blue-50 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="relative z-10">
+                    <h2 class="text-4xl md:text-5xl font-ubuntu font-bold text-alamia-dark mb-8">
+                        About <span class="gradient-text">AlamiaSoft</span>
+                    </h2>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        At AlamiaSoft, we believe in paving the way for seamless growth. As a dedicated
+                        partner, we provide clear and strategic paths to elevate your potential. Our
+                        focus is on fostering innovation and delivering tailored solutions that align
+                        with your goals.
+                    </p>
+                    <p class="text-slate-600 mb-10 leading-relaxed">
+                        With our expert guidance, you can navigate challenges and unlock new opportunities 
+                        with confidence. We are committed to being the catalyst for your success, ensuring 
+                        your journey to growth is as efficient and rewarding as possible.
+                    </p>
+                    
+                    <!-- Stats -->
+                    <div class="grid grid-cols-2 gap-8 mb-10">
+                        <div class="stats-card p-6 rounded-2xl text-center">
+                            <div class="text-4xl font-ubuntu font-bold gradient-text mb-2">100+</div>
+                            <div class="text-slate-600 font-medium">Projects Completed</div>
+                            <div class="w-12 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-3 rounded-full"></div>
+                        </div>
+                        <div class="stats-card p-6 rounded-2xl text-center">
+                            <div class="text-4xl font-ubuntu font-bold gradient-text mb-2">50+</div>
+                            <div class="text-slate-600 font-medium">Happy Clients</div>
+                            <div class="w-12 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mt-3 rounded-full"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA Button -->
+                    <button class="btn-primary text-white px-8 py-4 rounded-full font-semibold group">
+                        <i class="fas fa-users mr-3 group-hover:mr-4 transition-all"></i>
+                        Meet Our Team
+                    </button>
+                </div>
+                
+                <div class="glass-card p-10 rounded-3xl relative">
+                    <div class="absolute top-4 right-4 w-20 h-20 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-10"></div>
+                    
+                    <div class="mb-8">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-bullseye text-white text-lg"></i>
+                            </div>
+                            <h3 class="text-2xl font-ubuntu font-semibold text-alamia-dark">Our Mission</h3>
+                        </div>
+                        <p class="text-slate-600 leading-relaxed">
+                            To democratize technology by creating accessible, innovative software solutions that enable businesses of all sizes to compete and succeed in the digital marketplace.
+                        </p>
+                    </div>
+                    
+                    <div class="section-divider"></div>
+                    
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-eye text-white text-lg"></i>
+                            </div>
+                            <h3 class="text-2xl font-ubuntu font-semibold text-alamia-dark">Our Vision</h3>
+                        </div>
+                        <p class="text-slate-600 leading-relaxed">
+                            To be the trusted technology partner that transforms ideas into powerful digital solutions, fostering innovation and driving progress across industries.
+                        </p>
+                    </div>
+                    
+                    <!-- Values -->
+                    <div class="mt-8 grid grid-cols-3 gap-4">
+                        <div class="text-center p-4 bg-blue-50 rounded-xl">
+                            <i class="fas fa-lightbulb text-blue-500 text-xl mb-2"></i>
+                            <div class="text-sm font-medium text-blue-700">Innovation</div>
+                        </div>
+                        <div class="text-center p-4 bg-purple-50 rounded-xl">
+                            <i class="fas fa-handshake text-purple-500 text-xl mb-2"></i>
+                            <div class="text-sm font-medium text-purple-700">Partnership</div>
+                        </div>
+                        <div class="text-center p-4 bg-green-50 rounded-xl">
+                            <i class="fas fa-award text-green-500 text-xl mb-2"></i>
+                            <div class="text-sm font-medium text-green-700">Excellence</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Background Elements -->
+        <div class="absolute top-10 right-10 w-32 h-32 bg-gradient-to-r from-blue-200 to-purple-200 rounded-full opacity-20 floating-element"></div>
+        <div class="absolute bottom-10 left-10 w-24 h-24 bg-gradient-to-r from-purple-200 to-pink-200 rounded-full opacity-20 floating-element" style="animation-delay: -3s;"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-ubuntu font-bold text-alamia-dark mb-6">
+                    Get In <span class="gradient-text">Touch</span>
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                    Ready to transform your business with innovative software solutions? Let's discuss your project and bring your vision to life.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-ubuntu font-semibold text-alamia-dark mb-8">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center p-6 glass-card rounded-2xl group hover:scale-105 transition-transform">
+                                <div class="w-14 h-14 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mr-6">
+                                    <i class="fas fa-phone text-white text-lg"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm font-medium text-slate-500 mb-1">Phone</div>
+                                    <div class="text-lg font-semibold text-alamia-dark">+92 334 5112969</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center p-6 glass-card rounded-2xl group hover:scale-105 transition-transform">
+                                <div class="w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mr-6">
+                                    <i class="fas fa-envelope text-white text-lg"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm font-medium text-slate-500 mb-1">Email</div>
+                                    <div class="text-lg font-semibold text-alamia-dark">contact@alamiasoft.com</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center p-6 glass-card rounded-2xl group hover:scale-105 transition-transform">
+                                <div class="w-14 h-14 bg-gradient-to-r from-green-500 to-cyan-500 rounded-full flex items-center justify-center mr-6">
+                                    <i class="fas fa-clock text-white text-lg"></i>
+                                </div>
+                                <div>
+                                    <div class="text-sm font-medium text-slate-500 mb-1">Response Time</div>
+                                    <div class="text-lg font-semibold text-alamia-dark">Within 24 hours</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="pt-8">
+                        <h4 class="text-lg font-semibold text-alamia-dark mb-6">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-gradient-to-r from-gray-800 to-gray-900 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form p-10 rounded-3xl">
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-alamia-dark mb-3">Full Name</label>
+                                <input type="text" class="input-field w-full px-4 py-4 rounded-xl focus:outline-none transition-all" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-alamia-dark mb-3">Email Address</label>
+                                <input type="email" class="input-field w-full px-4 py-4 rounded-xl focus:outline-none transition-all" placeholder="john@example.com">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-alamia-dark mb-3">Subject</label>
+                            <input type="text" class="input-field w-full px-4 py-4 rounded-xl focus:outline-none transition-all" placeholder="Project Discussion">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-alamia-dark mb-3">Message</label>
+                            <textarea rows="5" class="input-field w-full px-4 py-4 rounded-xl focus:outline-none transition-all resize-none" placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full btn-primary text-white py-4 rounded-xl font-semibold text-lg group">
+                            <i class="fas fa-paper-plane mr-3 group-hover:mr-4 transition-all"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-alamia-dark via-slate-900 to-alamia-dark-gray text-white py-16 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-900/10 via-purple-900/10 to-cyan-900/10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-6">
+                        <img class="brand-logo" src="./assets/images/alamia-logo-light-transparent.png" alt="AlamiaSoft Logo">
+                    </div>
+                    <p class="text-slate-300 mb-6 leading-relaxed max-w-md">
+                        Innovative software solutions that drive business growth and digital transformation. Your clear path to growth.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                            <i class="fab fa-linkedin-in text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gradient-to-r from-gray-700 to-gray-800 rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                            <i class="fab fa-github text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                            <i class="fab fa-twitter text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gradient-to-r from-red-600 to-red-700 rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                            <i class="fab fa-youtube text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-ubuntu font-semibold text-lg mb-6 text-white">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="services/custom-development.html" class="text-slate-300 hover:text-white hover:translate-x-2 transform transition-all duration-300 flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2 text-alamia-accent"></i>Custom Development
+                        </a></li>
+                        <li><a href="services/cloud-solutions.html" class="text-slate-300 hover:text-white hover:translate-x-2 transform transition-all duration-300 flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2 text-alamia-accent"></i>Cloud Solutions
+                        </a></li>
+                        <li><a href="services/data-analytics.html" class="text-slate-300 hover:text-white hover:translate-x-2 transform transition-all duration-300 flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2 text-alamia-accent"></i>Data Analytics
+                        </a></li>
+                        <li><a href="services/consulting.html" class="text-slate-300 hover:text-white hover:translate-x-2 transform transition-all duration-300 flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2 text-alamia-accent"></i>Consulting
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-ubuntu font-semibold text-lg mb-6 text-white">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="text-slate-300 hover:text-white hover:translate-x-2 transform transition-all duration-300 flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2 text-alamia-accent"></i>About Us
+                        </a></li>
+                        <li><a href="#contact" class="text-slate-300 hover:text-white hover:translate-x-2 transform transition-all duration-300 flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2 text-alamia-accent"></i>Contact
+                        </a></li>
+                        <li><a href="privacy-policy.html" class="text-slate-300 hover:text-white hover:translate-x-2 transform transition-all duration-300 flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2 text-alamia-accent"></i>Privacy Policy
+                        </a></li>
+                        <li><a href="terms-of-service.html" class="text-slate-300 hover:text-white hover:translate-x-2 transform transition-all duration-300 flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2 text-alamia-accent"></i>Terms of Service
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-700/50 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-center md:text-left mb-4 md:mb-0">
+                        <p class="text-slate-400 text-sm mb-1">
+                            &copy; 2025 AlamiaSoft. All rights reserved. Made with <i class="fas fa-heart text-red-500 mx-1"></i> for innovation.
+                        </p>
+                        <p class="text-slate-500 text-xs">
+                            <a href="https://www.vecteezy.com/free-videos/exploding" class="hover:text-slate-300 transition-colors" target="_blank" rel="noopener">Exploding Stock Videos by Vecteezy</a>
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-6 text-sm text-slate-400">
+                        <a href="terms-of-service.html" class="hover:text-white transition-colors">Terms of Service</a>
+                        <a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Background Elements -->
+        <div class="absolute top-10 right-10 w-20 h-20 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full floating-element"></div>
+        <div class="absolute bottom-10 left-10 w-16 h-16 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full floating-element" style="animation-delay: -2s;"></div>
+    </footer>
+
+    <script>
+        // Modern JavaScript with enhanced functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Video background handling
+            const heroVideo = document.querySelector('#home video');
+            if (heroVideo) {
+                // Handle video load error - fallback to gradient background
+                heroVideo.addEventListener('error', function() {
+                    const videoContainer = this.parentElement;
+                    videoContainer.classList.add('video-fallback');
+                    this.style.display = 'none';
+                });
+                
+                // Ensure video plays on mobile devices
+                heroVideo.addEventListener('loadeddata', function() {
+                    this.play().catch(function(error) {
+                        console.log('Video autoplay failed:', error);
+                        // Fallback to gradient if autoplay fails
+                        const videoContainer = heroVideo.parentElement;
+                        videoContainer.classList.add('video-fallback');
+                    });
+                });
+            }
+
+            // Mobile menu toggle with animation
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                // Add rotation animation to hamburger icon
+                const icon = this.querySelector('svg');
+                icon.style.transform = mobileMenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(90deg)';
+            });
+
+            // Smooth scrolling for navigation links with offset
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                        // Close mobile menu if open
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuButton.querySelector('svg').style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+
+            // Enhanced form submission with validation
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simple validation
+                    const inputs = form.querySelectorAll('input[required], textarea[required]');
+                    let isValid = true;
+                    
+                    inputs.forEach(input => {
+                        if (!input.value.trim()) {
+                            isValid = false;
+                            input.classList.add('border-red-500');
+                        } else {
+                            input.classList.remove('border-red-500');
+                        }
+                    });
+                    
+                    if (isValid) {
+                        // Show success message with modern styling
+                        showNotification('Thank you for your message! We will get back to you within 24 hours.', 'success');
+                        form.reset();
+                    } else {
+                        showNotification('Please fill in all required fields.', 'error');
+                    }
+                });
+            }
+
+            // Enhanced scroll effects
+            const navbar = document.getElementById('navbar');
+            const scrollProgress = document.getElementById('scroll-progress');
+            
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrollTop / docHeight) * 100;
+                
+                // Update scroll progress bar
+                scrollProgress.style.transform = `scaleX(${scrollPercent / 100})`;
+                
+                // Enhanced navbar effects
+                if (scrollTop > 50) {
+                    navbar.classList.add('shadow-lg', 'backdrop-blur-md');
+                    navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                } else {
+                    navbar.classList.remove('shadow-lg');
+                    navbar.style.background = 'rgba(255, 255, 255, 0.9)';
+                }
+            });
+
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for animation
+            document.querySelectorAll('.glass-card, .stats-card').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Parallax effect for floating elements
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const parallaxElements = document.querySelectorAll('.floating-element');
+                
+                parallaxElements.forEach((element, index) => {
+                    const speed = 0.5 + (index * 0.1);
+                    element.style.transform = `translateY(${scrolled * speed}px)`;
+                });
+            });
+
+            // Enhanced button hover effects
+            document.querySelectorAll('.btn-primary, .btn-secondary').forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px) scale(1.05)';
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Typing effect for hero text (optional enhancement)
+            const heroTitle = document.querySelector('h1');
+            if (heroTitle) {
+                heroTitle.style.opacity = '0';
+                setTimeout(() => {
+                    heroTitle.style.opacity = '1';
+                    heroTitle.classList.add('animate-slide-up');
+                }, 300);
+            }
+        });
+
+        // Notification system
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-20 right-4 z-50 p-4 rounded-lg shadow-lg transform translate-x-full transition-transform duration-300 ${
+                type === 'success' ? 'bg-green-500 text-white' : 
+                type === 'error' ? 'bg-red-500 text-white' : 
+                'bg-blue-500 text-white'
+            }`;
+            notification.innerHTML = `
+                <div class="flex items-center">
+                    <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'} mr-2"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Animate in
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+            
+            // Animate out and remove
+            setTimeout(() => {
+                notification.style.transform = 'translateX(full)';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 4000);
+        }
+
+        // Performance optimization: Debounce scroll events
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Apply debouncing to scroll events
+        window.addEventListener('scroll', debounce(function() {
+            // Scroll-dependent animations can be added here
+        }, 10));
+    </script>
+</body>
+</html>
