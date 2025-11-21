@@ -1,0 +1,19 @@
+:root {
+  /* Base */
+  --alamia-black: #000000;
+  --alamia-white: #FFFFFF;
+
+  /* Neutrals */
+  --alamia-gray-100: #F5F5F5;
+  --alamia-gray-200: #F0F0F0;
+  --alamia-gray-900: #111827;
+
+  /* Brand Primary (Blue) */
+  --alamia-blue: #0066CC;
+  --alamia-blue-light: #e6f2ff;
+  --alamia-blue-dark: #003D7A;
+
+  /* Supporting Accents */
+  --alamia-green: #36b82a;   /* success */
+  --alamia-orange: #fcb63d;  /* warning */
+}

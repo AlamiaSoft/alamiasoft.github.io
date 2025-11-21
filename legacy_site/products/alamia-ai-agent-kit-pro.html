@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Build powerful AI agent systems in minutes. Complete starter kit with Developer & Marketing AI agents, workflows, and integrations.">
+    <title>AI Multi-Agent Team Starter Kit | Developer + Marketing Edition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .subtle-gradient {
+            background: linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .workflow-box {
+            background: #1e293b;
+            color: #e2e8f0;
+            font-family: 'Courier New', monospace;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+        .pulse-button {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .8;
+            }
+        }
+    </style>
+</head>
+<body class="subtle-gradient">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                    <span class="ml-2 text-xl font-bold text-gray-900">AgentKit Pro</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-gray-700 hover:text-indigo-600 transition">Features</a>
+                    <a href="#whats-inside" class="text-gray-700 hover:text-indigo-600 transition">What's Inside</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-indigo-600 transition">Testimonials</a>
+                    <a href="#faq" class="text-gray-700 hover:text-indigo-600 transition">FAQ</a>
+                </div>
+                <div>
+                    <a href="#buy-now" class="bg-indigo-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-indigo-700 transition">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden py-20 lg:py-32">
+        <div class="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-purple-50 opacity-70"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-left">
+                    <div class="inline-block mb-4">
+                        <span class="bg-indigo-100 text-indigo-800 text-sm font-semibold px-4 py-2 rounded-full">Developer + Marketing Edition</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+                        Build Your AI Agent Team in <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Minutes, Not Months</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        Complete starter kit with production-ready AI agents for development and marketing. Pre-built workflows, integration templates, and deployment guides included. Ship your AI team today.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#buy-now" class="bg-indigo-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-indigo-700 transition shadow-lg hover:shadow-xl text-center pulse-button">
+                            Get Instant Access - $149
+                        </a>
+                        <a href="#whats-inside" class="bg-white text-indigo-600 px-8 py-4 rounded-lg font-bold text-lg border-2 border-indigo-600 hover:bg-indigo-50 transition text-center">
+                            View Full Contents
+                        </a>
+                    </div>
+                    <div class="mt-8 flex items-center gap-6 text-sm text-gray-600">
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            Instant Download
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            No Subscriptions
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            Lifetime Updates
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl shadow-2xl p-8 transform hover:scale-105 transition duration-300">
+                        <div class="bg-white rounded-lg p-6 space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Developer Agent</p>
+                                    <p class="text-sm text-gray-600">Code generation ready</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Marketing Agent</p>
+                                    <p class="text-sm text-gray-600">Content automation live</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Workflows Deployed</p>
+                                    <p class="text-sm text-gray-600">5 pre-built automations</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-yellow-400 rounded-full opacity-20 blur-3xl"></div>
+                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-blue-400 rounded-full opacity-20 blur-3xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Banner -->
+    <section class="bg-white py-8 border-t border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <p class="text-3xl font-bold text-indigo-600">500+</p>
+                    <p class="text-gray-600 text-sm mt-1">Developers Using</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-bold text-indigo-600">12hrs</p>
+                    <p class="text-gray-600 text-sm mt-1">Avg. Setup Time</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-bold text-indigo-600">98%</p>
+                    <p class="text-gray-600 text-sm mt-1">Satisfaction Rate</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-bold text-indigo-600">24/7</p>
+                    <p class="text-gray-600 text-sm mt-1">Agent Availability</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Why Teams Choose AgentKit Pro</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Skip months of R&D. Get production-ready AI agents with proven workflows and enterprise-grade integrations.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-xl card-hover">
+                    <div class="w-14 h-14 bg-indigo-600 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Production-Ready Code</h3>
+                    <p class="text-gray-600 leading-relaxed">No demos or prototypes. Get fully functional agents with error handling, logging, and deployment scripts. Copy, configure, deploy.</p>
+                </div>
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-xl card-hover">
+                    <div class="w-14 h-14 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Lightning Fast Setup</h3>
+                    <p class="text-gray-600 leading-relaxed">Deploy your first agent in under 30 minutes. Comprehensive documentation and video walkthroughs guide you from zero to production.</p>
+                </div>
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-xl card-hover">
+                    <div class="w-14 h-14 bg-green-600 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Enterprise Integrations</h3>
+                    <p class="text-gray-600 leading-relaxed">Pre-built connectors for Slack, GitHub, HubSpot, Stripe, and 20+ platforms. Authentication flows and webhook handlers included.</p>
+                </div>
+                <div class="bg-gradient-to-br from-orange-50 to-red-50 p-8 rounded-xl card-hover">
+                    <div class="w-14 h-14 bg-orange-600 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Proven Workflows</h3>
+                    <p class="text-gray-600 leading-relaxed">Battle-tested automation templates used by real companies. Code review agents, content schedulers, lead qualification, and more.</p>
+                </div>
+                <div class="bg-gradient-to-br from-cyan-50 to-blue-50 p-8 rounded-xl card-hover">
+                    <div class="w-14 h-14 bg-cyan-600 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Complete Documentation</h3>
+                    <p class="text-gray-600 leading-relaxed">Every agent comes with API references, architecture diagrams, troubleshooting guides, and real-world usage examples.</p>
+                </div>
+                <div class="bg-gradient-to-br from-yellow-50 to-amber-50 p-8 rounded-xl card-hover">
+                    <div class="w-14 h-14 bg-yellow-600 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Lifetime Updates</h3>
+                    <p class="text-gray-600 leading-relaxed">Get free updates as we add new agents, integrations, and workflows. One-time payment, unlimited future value.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Inside Section -->
+    <section id="whats-inside" class="py-20 subtle-gradient">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-4">What's Inside the Starter Kit</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Everything you need to build, deploy, and scale your AI agent infrastructure.</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 mb-16">
+                <div class="bg-white rounded-2xl shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 ml-4">Developer AI Agent</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <div>
+                                <p class="font-semibold text-gray-900">Code Review Automation Agent</p>
+                                <p class="text-gray-600 text-sm mt-1">Analyzes pull requests, suggests improvements, flags security issues, and enforces code standards.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <div>
+                                <p class="font-semibold text-gray-900">Documentation Generator</p>
+                                <p class="text-gray-600 text-sm mt-1">Creates API docs, README files, and inline comments from your codebase automatically.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <div>
+                                <p class="font-semibold text-gray-900">Bug Triage Assistant</p>
+                                <p class="text-gray-600 text-sm mt-1">Categorizes issues, assigns priority levels, and suggests similar resolved tickets.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <div>
+                                <p class="font-semibold text-gray-900">Test Case Generator</p>
+                                <p class="text-gray-600 text-sm mt-1">Writes unit tests and integration tests based on your functions and API endpoints.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <div>
+                                <p class="font-semibold text-gray-900">GitHub Integration Templates</p>
+                                <p class="text-gray-600 text-sm mt-1">Pre-configured webhooks, OAuth flows, and CI/CD pipeline connectors.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 ml-4">Marketing AI Agent</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <div>
+                                <p class="font-semibold text-gray-900">Content Calendar Automator</p>
+                                <p class="text-gray-600 text-sm mt-1">Generates social media posts, blog topics, and email campaigns based on your brand voice.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+</svg>
+<div>
+<p class="font-semibold text-gray-900">SEO Optimization Engine</p>
+<p class="text-gray-600 text-sm mt-1">Analyzes content for keyword density, meta tags, and suggests improvements for search rankings.</p>
+</div>
+</li>
+<li class="flex items-start">
+<svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+</svg>
+<div>
+<p class="font-semibold text-gray-900">Lead Qualification Bot</p>
+<p class="text-gray-600 text-sm mt-1">Scores incoming leads, enriches data from LinkedIn/Clearbit, and routes to sales team.</p>
+</div>
+</li>
+<li class="flex items-start">
+<svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+</svg>
+<div>
+<p class="font-semibold text-gray-900">Email Sequence Builder</p>
+<p class="text-gray-600 text-sm mt-1">Creates personalized drip campaigns with A/B testing and performance tracking.</p>
+</div>
+</li>
+<li class="flex items-start">
+<svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+</svg>
+<div>
+<p class="font-semibold text-gray-900">HubSpot & Slack Connectors</p>
+<p class="text-gray-600 text-sm mt-1">Sync contacts, post updates, and trigger notifications across your marketing stack.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<!-- Additional Components Grid -->
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl shadow-md p-6 border-2 border-indigo-100">
+                <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                </div>
+                <h4 class="text-lg font-bold text-gray-900 mb-2">5 Workflow Templates</h4>
+                <p class="text-gray-600 text-sm">End-to-end automation blueprints for common tasks like content publishing, code deployment, and lead nurturing.</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-6 border-2 border-purple-100">
+                <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                <h4 class="text-lg font-bold text-gray-900 mb-2">Deployment Scripts</h4>
+                <p class="text-gray-600 text-sm">Docker configs, serverless functions, and cloud deployment templates for AWS, GCP, and Azure.</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-6 border-2 border-green-100">
+                <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                </div>
+                <h4 class="text-lg font-bold text-gray-900 mb-2">Complete Documentation</h4>
+                <p class="text-gray-600 text-sm">120+ pages covering setup, customization, troubleshooting, and scaling strategies with diagrams.</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-6 border-2 border-orange-100">
+                <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                <h4 class="text-lg font-bold text-gray-900 mb-2">Video Tutorials</h4>
+                <p class="text-gray-600 text-sm">10 walkthrough videos showing installation, configuration, and real-world implementation examples.</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-6 border-2 border-blue-100">
+                <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
+                    </svg>
+                </div>
+                <h4 class="text-lg font-bold text-gray-900 mb-2">Private Community Access</h4>
+                <p class="text-gray-600 text-sm">Join our Discord server with 500+ developers sharing tips, custom agents, and integration patterns.</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-6 border-2 border-yellow-100">
+                <div class="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                    </svg>
+                </div>
+                <h4 class="text-lg font-bold text-gray-900 mb-2">Lifetime Updates</h4>
+                <p class="text-gray-600 text-sm">Get every new agent, integration, and feature we release. No subscriptions, no expiration dates.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Workflow Visualization Section -->
+<section class="py-20 bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-extrabold text-white mb-4">How the Agents Work Together</h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto">See the complete workflow from trigger to execution. Copy these patterns into your own systems.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8">
+            <div>
+                <h3 class="text-2xl font-bold text-white mb-4 flex items-center">
+                    <span class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white mr-3">1</span>
+                    Developer Agent Workflow
+                </h3>
+                <div class="workflow-box"><pre class="text-sm">
+┌─────────────────────────────────────┐
+│  GitHub Webhook: PR Opened          │
+└────────────┬────────────────────────┘
+             │
+             ▼
+┌─────────────────────────────────────┐
+│  Agent: Fetch PR Diff & Context     │
+│  - Clone repo branch                │
+│  - Parse changed files              │
+│  - Extract code blocks              │
+└────────────┬────────────────────────┘
+             │
+             ▼
+┌─────────────────────────────────────┐
+│  AI Analysis Engine                 │
+│  - Run security scan                │
+│  - Check code standards             │
+│  - Suggest optimizations            │
+└────────────┬────────────────────────┘
+             │
+             ▼
+┌─────────────────────────────────────┐
+│  Post Review Comment on GitHub      │
+│  - Inline suggestions               │
+│  - Summary report                   │
+│  - Approval/Request changes         │
+└─────────────────────────────────────┘
+</pre>
+</div>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-bold text-white mb-4 flex items-center">
+                    <span class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white mr-3">2</span>
+                    Marketing Agent Workflow
+                </h3>
+                <div class="workflow-box"><pre class="text-sm">
+┌─────────────────────────────────────┐
+│  Trigger: New Lead Form Submission  │
+└────────────┬────────────────────────┘
+             │
+             ▼
+┌─────────────────────────────────────┐
+│  Agent: Enrich Lead Data            │
+│  - Fetch LinkedIn profile           │
+│  - Check company info (Clearbit)    │
+│  - Calculate lead score             │
+└────────────┬────────────────────────┘
+             │
+             ▼
+┌─────────────────────────────────────┐
+│  AI Qualification Logic             │
+│  - Match ideal customer profile     │
+│  - Prioritize by urgency            │
+│  - Generate personalized intro      │
+└────────────┬────────────────────────┘
+             │
+             ▼
+┌─────────────────────────────────────┐
+│  Route to Sales & Notify            │
+│  - Add to HubSpot                   │
+│  - Send Slack alert                 │
+│  - Queue email sequence             │
+└─────────────────────────────────────┘
+</pre>
+</div>
+            </div>
+        </div>
+
+        <div class="mt-12 text-center">
+            <p class="text-gray-300 text-lg mb-6">Both workflows include error handling, retry logic, and detailed logging. Fully customizable to your needs.</p>
+            <a href="#buy-now" class="inline-block bg-white text-gray-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition shadow-lg">
+                Get the Complete Source Code
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Bonuses Section -->
+<section class="py-20 bg-gradient-to-br from-indigo-600 to-purple-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-extrabold text-white mb-4">Exclusive Bonuses Included</h2>
+            <p class="text-xl text-indigo-100 max-w-3xl mx-auto">Get even more value with these premium add-ons at no extra cost.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 border border-white border-opacity-20">
+                <div class="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Prompt Engineering Library</h3>
+                <p class="text-indigo-100 mb-4">50+ battle-tested prompts optimized for GPT-4, Claude, and Gemini. Includes system prompts, few-shot examples, and chain-of-thought templates.</p>
+                <p class="text-yellow-400 font-bold">Value: $47</p>
+            </div>
+
+            <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 border border-white border-opacity-20">
+                <div class="w-12 h-12 bg-green-400 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Analytics Dashboard Template</h3>
+                <p class="text-indigo-100 mb-4">React + Chart.js dashboard for monitoring agent performance, API usage, and cost tracking. Fully customizable and production-ready.</p>
+                <p class="text-yellow-400 font-bold">Value: $79</p>
+            </div>
+
+            <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 border border-white border-opacity-20">
+                <div class="w-12 h-12 bg-blue-400 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">API Rate Limiter Middleware</h3>
+                <p class="text-indigo-100 mb-4">Prevent hitting OpenAI/Anthropic rate limits. Smart queuing system with exponential backoff and cost optimization algorithms.</p>
+                <p class="text-yellow-400 font-bold">Value: $39</p>
+            </div>
+
+            <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 border border-white border-opacity-20">
+                <div class="w-12 h-12 bg-pink-400 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Multi-Model Fallback System</h3>
+                <p class="text-indigo-100 mb-4">Automatically switch between GPT-4, Claude, and Gemini based on availability and cost. Includes load balancing and health checks.</p>
+                <p class="text-yellow-400 font-bold">Value: $59</p>
+            </div>
+
+            <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 border border-white border-opacity-20">
+                <div class="w-12 h-12 bg-orange-400 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Security & Compliance Checklist</h3>
+                <p class="text-indigo-100 mb-4">GDPR, SOC 2, and HIPAA compliance guidelines for AI systems. Includes audit logs, data handling protocols, and security best practices.</p>
+                <p class="text-yellow-400 font-bold">Value: $97</p>
+            </div>
+
+            <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 border border-white border-opacity-20">
+                <div class="w-12 h-12 bg-purple-400 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Team Collaboration Templates</h3>
+                <p class="text-indigo-100 mb-4">Notion workspace, project management boards, and communication protocols for teams building with AI agents.</p>
+                <p class="text-yellow-400 font-bold">Value: $29</p>
+            </div>
+        </div>
+
+        <div class="mt-12 text-center">
+            <p class="text-2xl font-bold text-white mb-2">Total Bonus Value: <span class="text-yellow-400">$350</span></p>
+            <p class="text-indigo-100 text-lg">Yours free when you get the starter kit today</p>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-20 subtle-gradient">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-4">What Developers Are Saying</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Join hundreds of teams already shipping AI-powered products.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl shadow-lg p-8 card-hover">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                        SM
+                    </div>
+                    <div class="ml-4">
+                        <p class="font-bold text-gray-900">Sarah Mitchell</p>
+                        <p class="text-gray-600 text-sm">CTO, TechFlow AI</p>
+                    </div>
+                </div>
+                <div class="flex mb-4">
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 020 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+<svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+</div>
+<p class="text-gray-700 leading-relaxed">"We cut our development time from 6 weeks to 8 days. The code review agent alone saves our team 15 hours per week. The documentation is crystal clear and the workflows actually work in production."</p>
+</div>
+<div class="bg-white rounded-xl shadow-lg p-8 card-hover">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                        JC
+                    </div>
+                    <div class="ml-4">
+                        <p class="font-bold text-gray-900">James Chen</p>
+                        <p class="text-gray-600 text-sm">Founder, MarketBoost</p>
+                    </div>
+                </div>
+                <div class="flex mb-4">
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                </div>
+                <p class="text-gray-700 leading-relaxed">"The marketing agent is a game-changer. We're qualifying 3x more leads with better accuracy, and our email sequences are converting at 22% vs 8% before. ROI in the first month."</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-8 card-hover">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                        AK
+                    </div>
+                    <div class="ml-4">
+                        <p class="font-bold text-gray-900">Aisha Kumar</p>
+                        <p class="text-gray-600 text-sm">Engineering Lead, DataSync</p>
+                    </div>
+                </div>
+                <div class="flex mb-4">
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                </div>
+                <p class="text-gray-700 leading-relaxed">"Best $149 I've spent this year. The integration templates saved us weeks of API documentation reading. We deployed to production in 3 days. The community is incredibly helpful too."</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section id="faq" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Frequently Asked Questions</h2>
+            <p class="text-xl text-gray-600">Everything you need to know before getting started.</p>
+        </div>
+
+        <div class="space-y-6">
+            <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                <h3 class="text-lg font-bold text-gray-900 mb-2">What programming languages are supported?</h3>
+                <p class="text-gray-700">The agents are built primarily in Python (3.9+) and JavaScript/TypeScript (Node.js 18+). All code is well-documented and follows industry best practices. You can easily adapt the patterns to other languages.</p>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Do I need API keys for OpenAI or other services?</h3>
+                <p class="text-gray-700">Yes. The agents work with OpenAI GPT-4, Anthropic Claude, Google Gemini, and other LLM providers. You'll need your own API keys. We provide detailed setup instructions and cost optimization guides to keep expenses low.</p>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Can I use this for client projects or commercial applications?</h3>
+                <p class="text-gray-700">Absolutely! You have a commercial license to use, modify, and deploy these agents in unlimited client projects and commercial applications. Build your SaaS, sell to clients, or use internally—no restrictions.</p>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                <h3 class="text-lg font-bold text-gray-900 mb-2">What if I get stuck during setup?</h3>
+                <p class="text-gray-700">You get access to our private Discord community with 500+ developers and direct support from our team. We also provide video tutorials, troubleshooting guides, and detailed documentation for every component.</p>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                <h3 class="text-lg font-bold text-gray-900 mb-2">How are updates delivered?</h3>
+                <p class="text-gray-700">All updates are delivered through our private GitHub repository. You'll get instant access after purchase and receive email notifications when new agents, integrations, or features are added. No additional fees ever.</p>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Is this suitable for beginners?</h3>
+                <p class="text-gray-700">You should have intermediate programming experience and basic understanding of APIs and webhooks. If you've deployed a web application before, you'll be fine. Complete beginners might need to learn fundamentals first.</p>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                <h3 class="text-lg font-bold text-gray-900 mb-2">What deployment platforms are supported?</h3>
+                <p class="text-gray-700">We provide deployment templates for AWS Lambda, Google Cloud Functions, Azure Functions, Vercel, Railway, and traditional VPS hosting. Docker configurations and Kubernetes manifests are also included.</p>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Do you offer refunds?</h3>
+                <p class="text-gray-700">Yes. We offer a 30-day money-back guarantee. If you're not satisfied for any reason, email us within 30 days of purchase for a full refund—no questions asked.</p>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Can I customize the agents for my specific use case?</h3>
+                <p class="text-gray-700">Definitely! That's the whole point. You get the complete source code with modular architecture. Customize prompts, add new integrations, modify workflows—everything is designed to be extended and adapted to your needs.</p>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                <h3 class="text-lg font-bold text-gray-900 mb-2">How long does setup take?</h3>
+                <p class="text-gray-700">Most developers deploy their first agent in under 30 minutes. Complete implementation of all agents and workflows typically takes 8-12 hours depending on your infrastructure and customization needs.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA Section -->
+<section id="buy-now" class="py-20 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Ready to Build Your AI Team?</h2>
+        <p class="text-xl text-indigo-100 mb-8 max-w-2xl mx-auto">Join 500+ developers shipping AI-powered products faster. Get instant access to everything you need to deploy production-ready agents today.</p>
+        
+        <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-8 mb-8 max-w-2xl mx-auto border border-white border-opacity-20">
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="text-left">
+                    <p class="text-indigo-100 text-sm mb-2">Regular Price</p>
+                    <p class="text-white text-3xl font-bold line-through opacity-50">$349</p>
+                </div>
+                <div class="text-left md:text-right">
+                    <p class="text-yellow-300 text-sm mb-2">Launch Special</p>
+                    <p class="text-white text-5xl font-extrabold">$149</p>
+                </div>
+            </div>
+            
+            <ul class="text-left space-y-3 mb-8">
+                <li class="flex items-center text-white">
+                    <svg class="w-6 h-6 text-green-400 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    2 Complete AI Agents (Developer + Marketing)
+                </li>
+                <li class="flex items-center text-white">
+                    <svg class="w-6 h-6 text-green-400 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    5 Pre-Built Workflow Templates
+                </li>
+                <li class="flex items-center text-white">
+                    <svg class="w-6 h-6 text-green-400 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    20+ Integration Templates
+                </li>
+                <li class="flex items-center text-white">
+                    <svg class="w-6 h-6 text-green-400 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    $350 Worth of Premium Bonuses
+                </li>
+                <li class="flex items-center text-white">
+                    <svg class="w-6 h-6 text-green-400 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    Lifetime Updates & Community Access
+                </li>
+                <li class="flex items-center text-white">
+                    <svg class="w-6 h-6 text-green-400 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    Commercial License Included
+                </li>
+            </ul>
+
+            <a href="https://gumroad.com/l/ai-agent-starter-kit" target="_blank" class="block w-full bg-yellow-400 text-gray-900 px-8 py-5 rounded-lg font-extrabold text-xl hover:bg-yellow-300 transition shadow-2xl transform hover:scale-105 mb-4">
+                Get Instant Access Now
+            </a>
+            <p class="text-indigo-100 text-sm">⚡ Instant download • 💳 Secure payment via Gumroad • 🔒 30-day money-back guarantee</p>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center justify-center gap-8 text-white text-sm">
+            <div class="flex items-center">
+                <svg class="w-6 h-6 text-green-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                One-time payment
+            </div>
+            <div class="flex items-center">
+                <svg class="w-6 h-6 text-green-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                No subscriptions
+            </div>
+            <div class="flex items-center">
+                <svg class="w-6 h-6 text-green-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                Download immediately
+            </div>
+        </div>
+
+        <div class="mt-12 max-w-2xl mx-auto">
+            <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg p-6 border border-white border-opacity-20">
+                <div class="flex items-start">
+                    <svg class="w-8 h-8 text-green-400 mr-4 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    <div class="text-left">
+                        <p class="text-white font-bold text-lg mb-2">30-Day Money-BackGuarantee</p>
+<p class="text-indigo-100">Try the starter kit risk-free. If you're not completely satisfied within 30 days, we'll refund every penny. No questions asked, no hoops to jump through. We only win if you win.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-300 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+                <div class="flex items-center mb-4">
+                    <svg class="w-8 h-8 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                    <span class="ml-2 text-xl font-bold text-white">AgentKit Pro</span>
+                </div>
+                <p class="text-sm text-gray-400">Build production-ready AI agents in minutes, not months.</p>
+            </div>
+            
+            <div>
+                <h4 class="text-white font-bold mb-4">Product</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#features" class="hover:text-indigo-400 transition">Features</a></li>
+                    <li><a href="#whats-inside" class="hover:text-indigo-400 transition">What's Inside</a></li>
+                    <li><a href="#testimonials" class="hover:text-indigo-400 transition">Testimonials</a></li>
+                    <li><a href="#faq" class="hover:text-indigo-400 transition">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="text-white font-bold mb-4">Resources</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-indigo-400 transition">Documentation</a></li>
+                    <li><a href="#" class="hover:text-indigo-400 transition">Video Tutorials</a></li>
+                    <li><a href="#" class="hover:text-indigo-400 transition">Community Discord</a></li>
+                    <li><a href="#" class="hover:text-indigo-400 transition">GitHub Repository</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="text-white font-bold mb-4">Legal</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-indigo-400 transition">Terms of Service</a></li>
+                    <li><a href="#" class="hover:text-indigo-400 transition">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-indigo-400 transition">License Agreement</a></li>
+                    <li><a href="#" class="hover:text-indigo-400 transition">Refund Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-sm text-gray-400">&copy; 2025 AgentKit Pro. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="text-gray-400 hover:text-indigo-400 transition">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                    </svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-indigo-400 transition">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-indigo-400 transition">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer></body>
+</html>
