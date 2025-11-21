@@ -35,7 +35,7 @@ h6 {
     background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #334155 100%);
     position: relative;
     overflow: hidden;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/images/alamia-soft-header-home.jpeg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/images/alamia-soft-header-home.webp');
     background-size: cover;
     background-position: center;
 }
