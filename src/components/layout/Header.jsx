@@ -84,6 +84,21 @@ const Header = () => {
                                         </div>
                                     </div>
                                 </div>
+                                <div className="relative group">
+                                    <span className="nav-link text-alamia-dark-gray hover:text-alamia-accent px-4 py-2 text-sm flex items-center cursor-pointer">
+                                        Products <i className="fas fa-chevron-down ml-1 text-xs"></i>
+                                    </span>
+                                    <div className="absolute top-full left-0 mt-2 w-64 glass-card rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                                        <div className="p-4 space-y-2">
+                                            <Link to="/products/ai-agent-kit-pro" className="block px-4 py-3 text-alamia-dark-gray hover:text-alamia-accent hover:bg-alamia-light/50 rounded-lg transition-all">
+                                                <i className="fas fa-robot mr-3 text-alamia-accent"></i>AI Agent Kit Pro
+                                            </Link>
+                                            <Link to="/products/alamiaconnect-crm" className="block px-4 py-3 text-alamia-dark-gray hover:text-alamia-accent hover:bg-alamia-light/50 rounded-lg transition-all">
+                                                <i className="fas fa-users mr-3 text-alamia-accent"></i>AlamiaConnect CRM
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </div>
                                 <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="nav-link text-alamia-dark-gray hover:text-alamia-accent px-4 py-2 text-sm cursor-pointer">About</a>
                                 <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="nav-link text-alamia-dark-gray hover:text-alamia-accent px-4 py-2 text-sm cursor-pointer">Contact</a>
                                 <button onClick={(e) => handleNavClick(e, 'contact')} className="btn-primary text-white px-6 py-2.5 rounded-full text-sm font-medium">
@@ -121,6 +136,17 @@ const Header = () => {
                                 </Link>
                                 <Link to="/services/consulting" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 text-sm text-alamia-dark-gray hover:text-alamia-accent hover:bg-white/10 rounded-lg transition-all">
                                     <i className="fas fa-handshake mr-2 text-alamia-accent"></i>Consulting
+                                </Link>
+                            </div>
+                        </div>
+                        <div className="space-y-2">
+                            <span className="block px-4 py-3 text-alamia-dark-gray font-medium">Products</span>
+                            <div className="ml-4 space-y-1">
+                                <Link to="/products/ai-agent-kit-pro" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 text-sm text-alamia-dark-gray hover:text-alamia-accent hover:bg-white/10 rounded-lg transition-all">
+                                    <i className="fas fa-robot mr-2 text-alamia-accent"></i>AI Agent Kit Pro
+                                </Link>
+                                <Link to="/products/alamiaconnect-crm" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 text-sm text-alamia-dark-gray hover:text-alamia-accent hover:bg-white/10 rounded-lg transition-all">
+                                    <i className="fas fa-users mr-2 text-alamia-accent"></i>AlamiaConnect CRM
                                 </Link>
                             </div>
                         </div>

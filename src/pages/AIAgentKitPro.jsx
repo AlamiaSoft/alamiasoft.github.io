@@ -249,10 +249,10 @@ const AIAgentKitPro = () => {
                     <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6">Ready to Build Your AI Team?</h2>
                     <p className="text-xl text-indigo-100 mb-8 max-w-2xl mx-auto">Join 500+ developers shipping AI-powered products faster. Get instant access today.</p>
 
-                    <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-8 mb-8 max-w-2xl mx-auto border border-white border-opacity-20">
+                    <div className="bg-gray-900 bg-opacity-30 backdrop-blur-lg rounded-2xl p-8 mb-8 max-w-2xl mx-auto border border-white border-opacity-30">
                         <div className="grid md:grid-cols-2 gap-6 mb-6">
                             <div className="text-left">
-                                <p className="text-indigo-100 text-sm mb-2">Regular Price</p>
+                                <p className="text-white text-sm mb-2">Regular Price</p>
                                 <p className="text-white text-3xl font-bold line-through opacity-50">$349</p>
                             </div>
                             <div className="text-left md:text-right">

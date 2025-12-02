@@ -8,13 +8,13 @@ const AlamiaConnect = () => {
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="text-left">
                             <div className="inline-block mb-4">
-                                <span className="bg-emerald-100 text-emerald-800 text-sm font-semibold px-4 py-2 rounded-full">Powered by Krayin CRM</span>
+                                <span className="bg-emerald-100 text-emerald-800 text-sm font-semibold px-4 py-2 rounded-full">Enterprise CRM Solution</span>
                             </div>
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
                                 Transform Your Customer Relationships with <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">AlamiaConnect CRM</span>
                             </h1>
                             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                                Built on the robust Krayin CRM foundation, AlamiaConnect adds powerful features to streamline your sales pipeline, automate workflows, and deliver exceptional customer experiences at scale.
+                                A powerful, enterprise-grade CRM platform designed to streamline your sales pipeline, automate workflows, and deliver exceptional customer experiences at scale.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">
                                 <a href="#pricing" className="bg-emerald-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-emerald-700 transition shadow-lg hover:shadow-xl text-center pulse-button">
@@ -182,8 +182,8 @@ const AlamiaConnect = () => {
             <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl font-extrabold text-gray-900 mb-4">Enhanced Beyond Krayin</h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">AlamiaConnect builds on Krayin's foundation with powerful additions designed for modern businesses.</p>
+                        <h2 className="text-4xl font-extrabold text-gray-900 mb-4">Advanced CRM Capabilities</h2>
+                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">AlamiaConnect delivers powerful features designed for modern businesses.</p>
                     </div>
 
                     <div className="grid lg:grid-cols-2 gap-12">
@@ -443,9 +443,9 @@ const AlamiaConnect = () => {
                     <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6">Ready to Transform Your Sales Process?</h2>
                     <p className="text-xl text-emerald-100 mb-8 max-w-2xl mx-auto">Join thousands of teams already using AlamiaConnect to close more deals and build lasting customer relationships.</p>
 
-                    <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-8 mb-8 max-w-2xl mx-auto border border-white border-opacity-20">
+                    <div className="bg-gray-900 bg-opacity-30 backdrop-blur-lg rounded-2xl p-8 mb-8 max-w-2xl mx-auto border border-white border-opacity-30">
                         <div className="mb-6">
-                            <p className="text-emerald-100 text-lg mb-4">Start your 14-day free trial today</p>
+                            <p className="text-white text-lg mb-4">Start your 14-day free trial today</p>
                             <p className="text-white text-3xl font-bold">No credit card required</p>
                         </div>
 
@@ -453,7 +453,7 @@ const AlamiaConnect = () => {
                             Get Started Free
                         </a>
 
-                        <div className="mt-6 flex items-center justify-center gap-8 text-sm text-emerald-100">
+                        <div className="mt-6 flex items-center justify-center gap-8 text-sm text-white">
                             <div className="flex items-center">
                                 <svg className="w-5 h-5 text-white mr-2" fill="currentColor" viewBox="0 0 20 20">
                                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
