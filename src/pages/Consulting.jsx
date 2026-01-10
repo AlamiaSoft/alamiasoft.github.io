@@ -50,7 +50,7 @@ const Consulting = () => {
                 </div>
             </section>
 
-            <section className="py-20 bg-alamia-dark text-white">
+            <section className="py-20 bg-alamia-dark text-dark">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-4xl md:text-5xl font-ubuntu font-bold mb-8">
                         Let's Build Your Technology Strategy

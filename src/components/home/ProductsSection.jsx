@@ -44,6 +44,72 @@ const ProductsSection = () => {
                             </div>
                         </div>
                     </div>
+
+                    {/* AlamiaConnect CRM */}
+                    <div className="glass-card p-10 rounded-3xl group hover:shadow-2xl transition-all duration-300">
+                        <div className="flex flex-col md:flex-row gap-8 items-center">
+                            <div className="flex-shrink-0">
+                                <div className="w-24 h-24 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center shadow-lg">
+                                    <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div className="flex-1 text-center md:text-left">
+                                <h3 className="text-3xl font-ubuntu font-bold text-alamia-dark mb-4">AlamiaConnect CRM</h3>
+                                <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+                                    Transform your customer relationships with our enterprise-grade CRM platform. Streamline sales pipelines, automate workflows, and deliver exceptional experiences.
+                                </p>
+                                <div className="flex flex-wrap gap-3 mb-6 justify-center md:justify-start">
+                                    <span className="px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium">Sales Pipeline</span>
+                                    <span className="px-4 py-2 bg-teal-100 text-teal-700 rounded-full text-sm font-medium">Automation</span>
+                                    <span className="px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium">From $29/user</span>
+                                </div>
+                                <Link
+                                    to="/products/alamiaconnect-crm"
+                                    className="inline-flex items-center btn-primary text-white px-8 py-3 rounded-full font-semibold group-hover:shadow-xl transition-all"
+                                >
+                                    Learn More
+                                    <i className="fas fa-arrow-right ml-3 group-hover:ml-4 transition-all"></i>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Alamia UniSage */}
+                    <div className="glass-card p-10 rounded-3xl group hover:shadow-2xl transition-all duration-300">
+                        <div className="flex flex-col md:flex-row gap-8 items-center">
+                            <div className="flex-shrink-0">
+                                <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg">
+                                    <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                                        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div className="flex-1 text-center md:text-left">
+                                <h3 className="text-3xl font-ubuntu font-bold text-alamia-dark mb-4">Alamia UniSage</h3>
+                                <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+                                    Comprehensive university management system designed to streamline academic operations, student management, and administrative workflows.
+                                </p>
+                                <div className="flex flex-wrap gap-3 mb-6 justify-center md:justify-start">
+                                    <span className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Academic Management</span>
+                                    <span className="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium">Student Portal</span>
+                                    <span className="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Enterprise Solution</span>
+                                </div>
+                                <a
+                                    href="https://unisage.alamiasoft.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center btn-primary text-white px-8 py-3 rounded-full font-semibold group-hover:shadow-xl transition-all"
+                                >
+                                    Visit Platform
+                                    <i className="fas fa-external-link-alt ml-3 group-hover:ml-4 transition-all"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 

@@ -96,6 +96,9 @@ const Header = () => {
                                             <Link to="/products/alamiaconnect-crm" className="block px-4 py-3 text-alamia-dark-gray hover:text-alamia-accent hover:bg-alamia-light/50 rounded-lg transition-all">
                                                 <i className="fas fa-users mr-3 text-alamia-accent"></i>AlamiaConnect CRM
                                             </Link>
+                                            <a href="https://unisage.alamiasoft.com" target="_blank" rel="noopener noreferrer" className="block px-4 py-3 text-alamia-dark-gray hover:text-alamia-accent hover:bg-alamia-light/50 rounded-lg transition-all">
+                                                <i className="fas fa-graduation-cap mr-3 text-alamia-accent"></i>Alamia UniSage
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -148,6 +151,9 @@ const Header = () => {
                                 <Link to="/products/alamiaconnect-crm" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 text-sm text-alamia-dark-gray hover:text-alamia-accent hover:bg-white/10 rounded-lg transition-all">
                                     <i className="fas fa-users mr-2 text-alamia-accent"></i>AlamiaConnect CRM
                                 </Link>
+                                <a href="https://unisage.alamiasoft.com" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="block px-4 py-2 text-sm text-alamia-dark-gray hover:text-alamia-accent hover:bg-white/10 rounded-lg transition-all">
+                                    <i className="fas fa-graduation-cap mr-2 text-alamia-accent"></i>Alamia UniSage
+                                </a>
                             </div>
                         </div>
                         <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="block px-4 py-3 text-alamia-dark-gray hover:text-alamia-accent hover:bg-white/10 rounded-lg transition-all cursor-pointer">About</a>
