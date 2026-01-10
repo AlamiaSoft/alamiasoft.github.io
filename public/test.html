@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TallyPrime Next-Gen ERP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #020617; color: #cbd5e1; overflow: hidden; }
+        .mono { font-family: 'Roboto Mono', monospace; }
+        .hotkey { text-decoration: underline; text-decoration-color: #2dd4bf; text-underline-offset: 2px; font-weight: 600; }
+        .sidebar-btn { @apply flex flex-col items-center justify-center h-16 w-20 border-b border-slate-800 hover:bg-slate-800 transition-colors text-[10px] uppercase tracking-tighter text-slate-400; }
+        .sidebar-btn span { @apply text-teal-400 text-xs font-bold mb-1; }
+        .view { display: none; }
+        .view.active { display: flex; animation: fadeIn 0.2s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        .bs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background-color: #1e293b; }
+        .bs-row { @apply bg-slate-900 p-2 hover:bg-slate-800 cursor-pointer flex justify-between items-center transition-all; }
+        .bs-cell-val { @apply mono text-teal-400 font-medium; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #0f172a; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+        .drill-down-active { border-left: 3px solid #14b8a6; padding-left: 12px !important; }
+    </style>
+</head>
+<body class="h-screen flex flex-col">
+
+    <!-- TOP HEADER -->
+    <header class="h-10 bg-slate-900 border-b border-slate-800 flex items-center justify-between px-4 text-xs">
+        <div class="flex items-center gap-6">
+            <span class="font-bold text-teal-500 tracking-widest uppercase">TallyPrime 5.0</span>
+            <div class="flex items-center gap-4 text-slate-500">
+                <span><span class="hotkey">K</span>: Company</span>
+                <span><span class="hotkey">Y</span>: Data</span>
+                <span><span class="hotkey">Z</span>: Exchange</span>
+                <span class="text-teal-400 bg-teal-950/30 px-2 py-0.5 rounded border border-teal-800/50">ABC INFOTECH PVT LTD</span>
+            </div>
+        </div>
+        <div class="flex gap-4">
+            <span class="text-slate-500">1-Apr-24 to 31-Mar-25</span>
+            <span class="text-slate-300">Friday, 12 Jul, 2024</span>
+        </div>
+    </header>
+
+    <div class="flex flex-1 overflow-hidden">
+        
+        <!-- MAIN CONTENT AREA -->
+        <main class="flex-1 flex flex-col relative overflow-hidden bg-slate-950">
+            
+            <!-- BREADCRUMB / PATH BAR -->
+            <div class="h-8 bg-slate-900/50 border-b border-slate-800 flex items-center px-4 text-[10px] text-slate-500 uppercase tracking-widest">
+                Gateway of Tally &gt; <span id="current-path" class="text-slate-300 ml-1">Main Menu</span>
+            </div>
+
+            <!-- GATEWAY MENU VIEW -->
+            <div id="view-gateway" class="view active flex-1 flex flex-col items-center justify-center">
+                <div class="w-96 border border-slate-800 bg-slate-900 shadow-2xl rounded-sm">
+                    <div class="bg-teal-600 text-white px-4 py-1 text-xs font-bold flex justify-between">
+                        <span>Gateway of Tally</span>
+                        <span>ABC INFOTECH</span>
+                    </div>
+                    <div class="p-2 space-y-4">
+                        <section>
+                            <h3 class="text-[10px] text-slate-500 px-2 uppercase mb-1">Masters</h3>
+                            <button onclick="showView('voucher-entry')" class="w-full text-left px-2 py-1 hover:bg-teal-900/30 text-sm group flex justify-between">
+                                <span><span class="hotkey">C</span>reate</span>
+                            </button>
+                            <button class="w-full text-left px-2 py-1 hover:bg-teal-900/30 text-sm group">
+                                <span><span class="hotkey">A</span>lter</span>
+                            </button>
+                        </section>
+                        <section>
+                            <h3 class="text-[10px] text-slate-500 px-2 uppercase mb-1">Transactions</h3>
+                            <button onclick="showView('voucher-entry')" class="w-full text-left px-2 py-1 hover:bg-teal-900/30 text-sm group">
+                                <span><span class="hotkey">V</span>ouchers</span>
+                            </button>
+                            <button class="w-full text-left px-2 py-1 hover:bg-teal-900/30 text-sm group">
+                                <span>D<span class="hotkey">a</span>y Book</span>
+                            </button>
+                        </section>
+                        <section>
+                            <h3 class="text-[10px] text-slate-500 px-2 uppercase mb-1">Reports</h3>
+                            <button onclick="showView('balance-sheet')" class="w-full text-left px-2 py-1 hover:bg-teal-900/30 text-sm group">
+                                <span><span class="hotkey">B</span>alance Sheet</span>
+                            </button>
+                            <button class="w-full text-left px-2 py-1 hover:bg-teal-900/30 text-sm group">
+                                <span><span class="hotkey">P</span>rofit & Loss A/c</span>
+                            </button>
+                            <button class="w-full text-left px-2 py-1 hover:bg-teal-900/30 text-sm group">
+                                <span>St<span class="hotkey">o</span>ck Summary</span>
+                            </button>
+                            <button class="w-full text-left px-2 py-1 hover:bg-teal-900/30 text-sm group">
+                                <span><span class="hotkey">R</span>atio Analysis</span>
+                            </button>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BALANCE SHEET VIEW -->
+            <div id="view-balance-sheet" class="view flex-1 flex flex-col p-4">
+                <div class="flex justify-between items-end mb-4">
+                    <div>
+                        <h1 class="text-xl font-light text-slate-100">Balance Sheet</h1>
+                        <p class="text-[10px] text-slate-500 uppercase">ABC Infotech Pvt Ltd | 1-Apr-2024 to 31-Mar-2025</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="toggleBSLayout()" class="bg-slate-800 px-3 py-1 text-[10px] border border-slate-700 hover:bg-slate-700 rounded transition-all">
+                            TOGGLE VIEW (V/H)
+                        </button>
+                        <button class="bg-teal-600/20 text-teal-400 px-3 py-1 text-[10px] border border-teal-600/30 rounded">
+                            EXPAND ALL (+/-)
+                        </button>
+                    </div>
+                </div>
+
+                <div id="bs-container" class="flex-1 overflow-y-auto custom-scrollbar">
+                    <div id="bs-layout-wrapper" class="bs-grid border border-slate-800">
+                        <!-- LIABILITIES COLUMN -->
+                        <div class="flex flex-col">
+                            <div class="bg-slate-800 p-2 text-[10px] font-bold uppercase tracking-widest text-slate-400 border-b border-slate-700 flex justify-between">
+                                <span>Liabilities</span>
+                                <span>Amount</span>
+                            </div>
+                            <div class="bs-row" onclick="drillDown('Capital Account', '1,25,00,000.00')">
+                                <span class="text-sm">Capital Account</span>
+                                <span class="bs-cell-val">1,25,00,000.00</span>
+                            </div>
+                            <div class="bs-row" onclick="drillDown('Loans (Liability)', '45,20,500.00')">
+                                <span class="text-sm">Loans (Liability)</span>
+                                <span class="bs-cell-val">45,20,500.00</span>
+                            </div>
+                            <div class="bs-row" onclick="drillDown('Current Liabilities', '12,40,200.00')">
+                                <span class="text-sm">Current Liabilities</span>
+                                <div class="text-right">
+                                    <span class="bs-cell-val">12,40,200.00</span>
+                                    <div class="text-[9px] text-teal-600 font-bold mt-1">GST PAYABLE: 4,200.00</div>
+                                </div>
+                            </div>
+                            <div class="bs-row flex-1 bg-slate-900/50"></div>
+                            <div class="bg-slate-800 p-2 border-t border-slate-700 flex justify-between items-center">
+                                <span class="text-xs font-bold">Total</span>
+                                <span class="mono text-teal-400 font-bold">1,82,60,700.00</span>
+                            </div>
+                        </div>
+
+                        <!-- ASSETS COLUMN -->
+                        <div class="flex flex-col border-l border-slate-800">
+                            <div class="bg-slate-800 p-2 text-[10px] font-bold uppercase tracking-widest text-slate-400 border-b border-slate-700 flex justify-between">
+                                <span>Assets</span>
+                                <span>Amount</span>
+                            </div>
+                            <div class="bs-row" onclick="drillDown('Fixed Assets', '88,00,000.00')">
+                                <span class="text-sm">Fixed Assets</span>
+                                <span class="bs-cell-val">88,00,000.00</span>
+                            </div>
+                            <div class="bs-row" onclick="drillDown('Investments', '20,00,000.00')">
+                                <span class="text-sm">Investments</span>
+                                <span class="bs-cell-val">20,00,000.00</span>
+                            </div>
+                            <div class="bs-row" onclick="drillDown('Current Assets', '74,60,700.00')">
+                                <span class="text-sm">Current Assets</span>
+                                <span class="bs-cell-val">74,60,700.00</span>
+                            </div>
+                            <div class="bs-row flex-1 bg-slate-900/50"></div>
+                            <div class="bg-slate-800 p-2 border-t border-slate-700 flex justify-between items-center">
+                                <span class="text-xs font-bold">Total</span>
+                                <span class="mono text-teal-400 font-bold">1,82,60,700.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LEDGER DRILL DOWN VIEW -->
+            <div id="view-ledger-view" class="view flex-1 flex flex-col p-4">
+                <div class="mb-4">
+                    <button onclick="showView('balance-sheet')" class="text-teal-500 text-xs mb-2 hover:underline">← Back to Balance Sheet</button>
+                    <h1 class="text-xl font-light text-slate-100" id="ledger-title">Ledger Account</h1>
+                    <p class="text-[10px] text-slate-500 uppercase" id="ledger-subtitle">Transactions for current period</p>
+                </div>
+                <div class="flex-1 border border-slate-800 bg-slate-900 overflow-hidden flex flex-col">
+                    <div class="grid grid-cols-6 text-[10px] font-bold uppercase bg-slate-800 p-2 border-b border-slate-700 text-slate-400">
+                        <div class="col-span-1">Date</div>
+                        <div class="col-span-3">Particulars</div>
+                        <div class="col-span-1 text-right">Debit</div>
+                        <div class="col-span-1 text-right">Credit</div>
+                    </div>
+                    <div class="flex-1 overflow-y-auto custom-scrollbar text-sm">
+                        <div class="grid grid-cols-6 p-2 border-b border-slate-800/50 hover:bg-slate-800/30">
+                            <div class="mono text-xs text-slate-500">01-Apr-24</div>
+                            <div class="col-span-3">Opening Balance</div>
+                            <div class="text-right mono text-teal-400" id="opening-bal">0.00</div>
+                            <div class="text-right mono text-teal-400">-</div>
+                        </div>
+                        <div class="grid grid-cols-6 p-2 border-b border-slate-800/50 hover:bg-slate-800/30">
+                            <div class="mono text-xs text-slate-500">12-May-24</div>
+                            <div class="col-span-3">To Cash Purchase (Vch No: 42)</div>
+                            <div class="text-right mono text-teal-400">15,000.00</div>
+                            <div class="text-right mono text-teal-400">-</div>
+                        </div>
+                         <div class="grid grid-cols-6 p-2 border-b border-slate-800/50 hover:bg-slate-800/30">
+                            <div class="mono text-xs text-slate-500">25-Jun-24</div>
+                            <div class="col-span-3">By NEFT Transfer (Vch No: 105)</div>
+                            <div class="text-right mono text-teal-400">-</div>
+                            <div class="text-right mono text-teal-400">2,50,000.00</div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-800 p-2 flex justify-between items-center border-t border-slate-700">
+                        <span class="text-xs font-bold uppercase">Closing Balance</span>
+                        <span class="mono text-teal-400 font-bold" id="closing-bal">1,25,00,000.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VOUCHER ENTRY VIEW -->
+            <div id="view-voucher-entry" class="view flex-1 flex flex-col p-4">
+                <div class="bg-slate-900 border border-slate-800 rounded shadow-2xl max-w-4xl w-full mx-auto flex flex-col overflow-hidden">
+                    <div class="bg-teal-700 text-white p-2 text-xs font-bold flex justify-between items-center">
+                        <span>Accounting Voucher Creation</span>
+                        <div class="flex gap-4">
+                            <span>No. 142</span>
+                            <span>12-Jul-2024</span>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-6">
+                        <div class="flex items-center gap-4">
+                            <span class="w-24 text-xs font-bold text-slate-500 uppercase">Payment No.</span>
+                            <input type="text" value="142" class="bg-slate-950 border border-slate-700 px-2 py-1 text-sm w-32 focus:outline-none focus:border-teal-500" readonly>
+                        </div>
+                        
+                        <div class="space-y-2">
+                            <div class="grid grid-cols-12 gap-2 text-[10px] font-bold text-slate-500 uppercase px-2">
+                                <div class="col-span-1">Dr/Cr</div>
+                                <div class="col-span-7">Particulars</div>
+                                <div class="col-span-2 text-right">Debit</div>
+                                <div class="col-span-2 text-right">Credit</div>
+                            </div>
+                            <!-- Row 1 -->
+                            <div class="grid grid-cols-12 gap-2 items-center bg-slate-950 p-2 border border-slate-800">
+                                <div class="col-span-1 text-teal-500 font-bold text-xs">Dr</div>
+                                <div class="col-span-7">
+                                    <input type="text" placeholder="Select Ledger..." value="Office Rent" class="bg-transparent w-full text-sm focus:outline-none">
+                                </div>
+                                <div class="col-span-2">
+                                    <input type="text" value="45,000.00" class="bg-transparent w-full text-right mono text-sm focus:outline-none">
+                                </div>
+                                <div class="col-span-2 text-right text-slate-700">---</div>
+                            </div>
+                            <!-- Row 2 -->
+                            <div class="grid grid-cols-12 gap-2 items-center bg-slate-950 p-2 border border-slate-800">
+                                <div class="col-span-1 text-teal-500 font-bold text-xs">Cr</div>
+                                <div class="col-span-7">
+                                    <input type="text" placeholder="Select Ledger..." value="HDFC Bank Current A/c" class="bg-transparent w-full text-sm focus:outline-none">
+                                </div>
+                                <div class="col-span-2 text-right text-slate-700">---</div>
+                                <div class="col-span-2">
+                                    <input type="text" value="45,000.00" class="bg-transparent w-full text-right mono text-sm focus:outline-none">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-slate-800">
+                            <span class="text-[10px] font-bold text-slate-500 uppercase block mb-1">Narration:</span>
+                            <textarea class="w-full bg-slate-950 border border-slate-800 p-2 text-sm h-16 focus:outline-none focus:border-teal-500" placeholder="Enter narration..."></textarea>
+                        </div>
+                    </div>
+                    <div class="bg-slate-800 p-2 flex justify-end gap-2">
+                        <button onclick="showView('gateway')" class="px-6 py-1 text-xs border border-slate-600 hover:bg-slate-700">Cancel</button>
+                        <button onclick="showView('gateway')" class="px-6 py-1 text-xs bg-teal-600 text-white font-bold hover:bg-teal-500">Accept</button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- ACTION SIDEBAR -->
+        <aside class="w-20 bg-slate-900 border-l border-slate-800 flex flex-col">
+            <button class="sidebar-btn" onclick="showView('gateway')"><span>F1</span>Select Co</button>
+            <button class="sidebar-btn"><span>F2</span>Period</button>
+            <button class="sidebar-btn" onclick="showView('balance-sheet')"><span>F3</span>Company</button>
+            <button class="sidebar-btn"><span>F4</span>Contra</button>
+            <button class="sidebar-btn" onclick="showView('voucher-entry')"><span>F5</span>Payment</button>
+            <button class="sidebar-btn"><span>F6</span>Receipt</button>
+            <button class="sidebar-btn"><span>F7</span>Journal</button>
+            <button class="sidebar-btn"><span>F8</span>Sales</button>
+            <button class="sidebar-btn"><span>F9</span>Purchase</button>
+            <button class="sidebar-btn"><span>F10</span>Other Vch</button>
+            <button class="sidebar-btn border-b-0 mt-auto"><span>F11</span>Features</button>
+            <button class="sidebar-btn border-b-0 bg-slate-950"><span>F12</span>Configure</button>
+        </aside>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="h-6 bg-slate-950 border-t border-slate-800 flex items-center justify-between px-4 text-[9px] text-slate-600">
+        <div class="flex gap-4">
+            <span>TallyPrime Ver 5.0</span>
+            <span class="text-teal-900">|</span>
+            <span>Educational Mode</span>
+        </div>
+        <div class="flex gap-4 uppercase font-bold text-slate-400">
+            <span><span class="text-teal-600">Q</span>: Quit</span>
+            <span><span class="text-teal-600">G</span>: Go To</span>
+        </div>
+    </footer>
+
+    <script>
+        /**
+         * Navigation Logic
+         */
+        function showView(viewName) {
+            // Hide all views
+            const views = document.querySelectorAll('.view');
+            views.forEach(v => v.classList.remove('active'));
+
+            // Show target view
+            const target = document.getElementById('view-' + viewName);
+            if (target) {
+                target.classList.add('active');
+            }
+
+            // Update Breadcrumb
+            const pathMap = {
+                'gateway': 'Main Menu',
+                'balance-sheet': 'Balance Sheet',
+                'voucher-entry': 'Voucher Entry',
+                'ledger-view': 'Ledger Statement'
+            };
+            document.getElementById('current-path').innerText = pathMap[viewName] || viewName;
+        }
+
+        /**
+         * Balance Sheet Drill-Down Simulation
+         */
+        function drillDown(name, amount) {
+            document.getElementById('ledger-title').innerText = name;
+            document.getElementById('opening-bal').innerText = amount;
+            document.getElementById('closing-bal').innerText = amount;
+            showView('ledger-view');
+        }
+
+        /**
+         * Toggle Vertical/Horizontal Balance Sheet
+         */
+        let isVertical = false;
+        function toggleBSLayout() {
+            const wrapper = document.getElementById('bs-layout-wrapper');
+            isVertical = !isVertical;
+            
+            if (isVertical) {
+                wrapper.classList.remove('bs-grid');
+                wrapper.classList.add('flex', 'flex-col');
+                // Find all children and adjust borders if needed
+                const cols = wrapper.children;
+                cols[1].classList.remove('border-l');
+                cols[1].classList.add('border-t');
+            } else {
+                wrapper.classList.add('bs-grid');
+                wrapper.classList.remove('flex', 'flex-col');
+                const cols = wrapper.children;
+                cols[1].classList.add('border-l');
+                cols[1].classList.remove('border-t');
+            }
+        }
+
+        /**
+         * Global Keyboard Listeners (Tally-style)
+         */
+        document.addEventListener('keydown', (e) => {
+            // Hotkeys simulation
+            const key = e.key.toUpperCase();
+            
+            // F-Keys
+            if (e.key === 'F1') { e.preventDefault(); showView('gateway'); }
+            if (e.key === 'F5') { e.preventDefault(); showView('voucher-entry'); }
+            
+            // Shortcut Keys (Simple mapping)
+            if (document.getElementById('view-gateway').classList.contains('active')) {
+                if (key === 'B') showView('balance-sheet');
+                if (key === 'V') showView('voucher-entry');
+            }
+            
+            if (e.key === 'Escape') {
+                showView('gateway');
+            }
+        });
+
+        // Initialize with Gateway
+        showView('gateway');
+    </script>
+</body>
+</html>
+
